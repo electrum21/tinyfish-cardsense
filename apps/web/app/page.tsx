@@ -12,8 +12,6 @@ export default async function HomePage() {
   return (
     <main className="page-shell">
       <section className="hero">
-        <div className="eyebrow">TinyFish x Supabase x Vercel x Render</div>
-
         <div className="hero-grid">
           <div className="hero-copy">
             <h1>Singapore card intelligence, turned into a product.</h1>
@@ -37,21 +35,17 @@ export default async function HomePage() {
             <div className="stat-grid">
               <div className="stat-card">
                 <div className="stat-label">Cashback Cards</div>
-                <div className="stat-value">{summary.overview.cashback_card_count}</div>
+                <div className="stat-value">{summary.overview.cashbackCardsCount}</div>
               </div>
               <div className="stat-card">
                 <div className="stat-label">Signup Offers</div>
-                <div className="stat-value">{summary.overview.signup_offer_count}</div>
+                <div className="stat-value">{summary.overview.signupOffersCount}</div>
               </div>
               <div className="stat-card">
                 <div className="stat-label">Merchant Cashback High</div>
                 <div className="stat-value">
-                  {summary.overview.max_merchant_cashback_rate ? `${summary.overview.max_merchant_cashback_rate}%` : "--"}
+                  {summary.overview.max_merchant_cashback_rate ? `${summary.overview.merchantOffersCount}%` : "--"}
                 </div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-label">Exclusive Offers</div>
-                <div className="stat-value">{summary.overview.exclusive_signup_offer_count}</div>
               </div>
             </div>
           </div>

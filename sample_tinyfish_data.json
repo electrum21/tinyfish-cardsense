@@ -1,0 +1,3370 @@
+{
+  "results": [
+    {
+      "category_name": "SHOPBACK",
+      "url": "https://www.shopback.sg/food",
+      "run_id": "98416ccb-35ff-45aa-b69f-3076ddda6940",
+      "submit_response": {
+        "run_id": "98416ccb-35ff-45aa-b69f-3076ddda6940",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "98416ccb-35ff-45aa-b69f-3076ddda6940",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.shopback.sg/food to complete the goal: You are scraping ShopBack Singapore cashback deals page.\n\nFor each offer:\n- merchant (string)\n- cashbackRate (string)\n- cashbackRateNumber (number)\n- isUpsized (boolean)\n- regularRate (string)\n- eligibleCards (array)\n- validUntil (string)\n- minSpend (number)\n- maxCashback (number)\n- category (string)\n- promoCode (string)\n- isCardLinked (boolean)\n\nRules:\n- Upsized = true when shown\n- \"Up to X%\" -> use X\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:39:32Z",
+        "started_at": "2026-03-28T04:39:41Z",
+        "finished_at": "2026-03-28T04:42:07Z",
+        "num_of_steps": 17,
+        "result": {
+          "result": [
+            {
+              "category": "Food",
+              "merchant": "foodpanda",
+              "minSpend": null,
+              "isUpsized": true,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": "Up to 5%",
+              "cashbackRate": "7.5%",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 7.5
+            },
+            {
+              "category": "Food",
+              "merchant": "Quandoo",
+              "minSpend": null,
+              "isUpsized": false,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": null,
+              "cashbackRate": "$1.50 Cashback",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 1.5
+            },
+            {
+              "category": "Food",
+              "merchant": "Eatzi Gourmet Bakery",
+              "minSpend": null,
+              "isUpsized": false,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": null,
+              "cashbackRate": "5% Cashback",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 5
+            },
+            {
+              "category": "Food",
+              "merchant": "Cafe Britt Gourmet Coffee",
+              "minSpend": null,
+              "isUpsized": false,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": null,
+              "cashbackRate": "4% Cashback",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 4
+            },
+            {
+              "category": "Food",
+              "merchant": "YoloFoods",
+              "minSpend": null,
+              "isUpsized": false,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": null,
+              "cashbackRate": "Up to 5% Cashback",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 5
+            },
+            {
+              "category": "Food",
+              "merchant": "zChocolat",
+              "minSpend": null,
+              "isUpsized": false,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": null,
+              "cashbackRate": "10% Cashback",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 10
+            },
+            {
+              "category": "Food",
+              "merchant": "FoodLine",
+              "minSpend": null,
+              "isUpsized": false,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": null,
+              "cashbackRate": "Up to 2% Cashback",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 2
+            },
+            {
+              "category": "Food",
+              "merchant": "Kal by J",
+              "minSpend": null,
+              "isUpsized": false,
+              "promoCode": null,
+              "validUntil": null,
+              "maxCashback": null,
+              "regularRate": null,
+              "cashbackRate": "6% Cashback",
+              "isCardLinked": false,
+              "eligibleCards": null,
+              "cashbackRateNumber": 6
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-177-85-233.tetra-data.production.tinyfish.io/tf-21191141-c070-4193-b952-c30f3a50c856/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.maybank2u.com.sg/en/personal/cards/credit/index.page",
+      "run_id": "1b4acc22-910b-495e-bad5-ee67916279e7",
+      "submit_response": {
+        "run_id": "1b4acc22-910b-495e-bad5-ee67916279e7",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "1b4acc22-910b-495e-bad5-ee67916279e7",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.maybank2u.com.sg/en/personal/cards/credit/index.page to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T05:49:23Z",
+        "started_at": "2026-03-28T05:49:34Z",
+        "finished_at": "2026-03-28T05:53:53Z",
+        "num_of_steps": 31,
+        "result": {
+          "result": "```json\n[\n  {\n    \"cardName\": \"Maybank XL Cashback Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"dine\": 5,\n      \"shop\": 5,\n      \"travel\": 5,\n      \"play\": 5,\n      \"foreign currency\": 5,\n      \"others\": 0.2\n    },\n    \"minimumMonthlySpend\": 500,\n    \"monthlyCapSGD\": 80,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$87.20 (waived for first 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Tailored for ages 21-39; 5% cashback requires S$500 monthly spend.\",\n    \"signupBonus\": \"S$10 Cashback for new card applicants with first transaction.\"\n  },\n  {\n    \"cardName\": \"Maybank XL Rewards Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": 500,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$87.20 (waived for first 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Tailored for ages 21-39; 10X TREATS Points (4 air miles) with S$500 monthly spend.\",\n    \"signupBonus\": \"S$10 Cashback for new card applicants with first transaction.\"\n  },\n  {\n    \"cardName\": \"Maybank Family & Friends Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"preferred categories\": 8,\n      \"groceries\": 6,\n      \"others\": 0.22,\n      \"myr and idr spend\": 8\n    },\n    \"minimumMonthlySpend\": 800,\n    \"monthlyCapSGD\": 180,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20 (waived for first 3 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Up to 8% cashback on 5 preferred categories with S$1,600 spend; 6% with S$800 spend.\",\n    \"signupBonus\": \"Samsonite RESTACKD Spinner 68/25 EXP with S$1,300 spend within 2 months.\"\n  },\n  {\n    \"cardName\": \"Maybank Platinum Visa Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"all\": 3.33\n    },\n    \"minimumMonthlySpend\": 300,\n    \"monthlyCapSGD\": 66.67,\n    \"payoutCycle\": \"Quarterly\",\n    \"annualFee\": \"S$21.80 quarterly (waived for first 3 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Up to S$200 quarterly cashback with S$2,000 monthly spend; 3.33% rate includes insurance.\",\n    \"signupBonus\": \"Samsonite RESTACKD Spinner 68/25 EXP with S$1,300 spend within 2 months.\"\n  },\n  {\n    \"cardName\": \"Maybank Horizon Visa Signature Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Miles\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": 800,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20 (waived for first 3 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"2.8 air miles on air tickets and foreign spend with S$800 spend; 1.2 miles on travel and groceries.\",\n    \"signupBonus\": \"Samsonite RESTACKD Spinner 68/25 EXP with S$1,300 spend within 2 months.\"\n  },\n  {\n    \"cardName\": \"Maybank World Mastercard\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Miles\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": 800,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$261.60 (waived for first 1 year)\",\n    \"incomeRequirement\": 80000,\n    \"specialConditions\": \"10X TREATS Points (4 air miles) at selected merchants; complimentary green fees with S$2,000 spend.\",\n    \"signupBonus\": \"Samsonite RESTACKD Spinner 68/25 EXP with S$1,300 spend within 2 months.\"\n  },\n  {\n    \"cardName\": \"Maybank Visa Infinite Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Miles\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": 4000,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$654 (waived for first 1 year)\",\n    \"incomeRequirement\": 150000,\n    \"specialConditions\": \"8X TREATS Points (3.2 miles) on foreign spend with S$4,000 spend; complimentary limo transfers.\",\n    \"signupBonus\": null\n  },\n  {\n    \"cardName\": \"Maybank Manchester United Platinum Visa Credit Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20 (waived for first 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"2.8X TREATS Points local/overseas; up to 7X Points when Manchester United wins.\",\n    \"signupBonus\": \"Samsonite RESTACKD Spinner 68/25 EXP with S$1,300 spend within 2 months.\"\n  },\n  {\n    \"cardName\": \"Maybank FC Barcelona Visa Signature Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"all\": 1.6,\n      \"education\": 0.3\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$130.80 (waived for first 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Unlimited 1.6% cashback on all local and foreign spend with no minimum spend.\",\n    \"signupBonus\": \"Samsonite RESTACKD Spinner 68/25 EXP with S$1,300 spend within 2 months.\"\n  },\n  {\n    \"cardName\": \"Maybank eVibes Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"all\": 1\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$5.45 quarterly service fee (waived for first 2 years)\",\n    \"incomeRequirement\": 0,\n    \"specialConditions\": \"Exclusively for tertiary students aged 18-30; S$500 credit limit.\",\n    \"signupBonus\": \"S$50 Grab Gift voucher with S$150 spend within 2 months.\"\n  },\n  {\n    \"cardName\": \"Maybank Business Platinum Mastercard\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": null,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20 (waived for first 2 years)\",\n    \"incomeRequirement\": null,\n    \"specialConditions\": \"Earn TREATS Points on utility bills; S$50 cashback redemption available.\",\n    \"signupBonus\": null\n  },\n  {\n    \"cardName\": \"Maybank DUO Platinum Mastercard\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": null,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": null,\n    \"incomeRequirement\": null,\n    \"specialConditions\": \"No longer offered for new applications.\",\n    \"signupBonus\": null\n  },\n  {\n    \"cardName\": \"Maybank Perks Card\",\n    \"bank\": \"Maybank\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": null,\n    \"minimumMonthlySpend\": null,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": null,\n    \"incomeRequirement\": null,\n    \"specialConditions\": \"No longer offered for new applications.\",\n    \"signupBonus\": null\n  }\n]\n```"
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-219-249-216.tetra-data.production.tinyfish.io/tf-6ad149f4-1653-4012-b4f8-531b33fe64cd/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.americanexpress.com/en-sg/credit-cards/",
+      "run_id": "55ae008d-8a6f-4649-bef9-91fe2906a70e",
+      "submit_response": {
+        "run_id": "55ae008d-8a6f-4649-bef9-91fe2906a70e",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "55ae008d-8a6f-4649-bef9-91fe2906a70e",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.americanexpress.com/en-sg/credit-cards/ to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:05Z",
+        "started_at": "2026-03-28T04:23:42Z",
+        "finished_at": "2026-03-28T04:25:39Z",
+        "num_of_steps": 12,
+        "result": {
+          "result": [
+            {
+              "bank": "American Express",
+              "cardName": "The Platinum Card®",
+              "cardType": "Rewards",
+              "annualFee": "S$1,744 (incl. of 9% GST)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Receive up to 200,000 Membership Rewards® points",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Unlimited access for 2 to over 1,550 airport lounges, Complimentary dining experience, One night stay at The St. Regis Singapore",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Singapore Airlines KrisFlyer Ascend Credit Card",
+              "cardType": "Miles",
+              "annualFee": "S$397.85 (incl. of 9% GST)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Receive up to 31,000 KrisFlyer miles",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 50000,
+              "specialConditions": "Complimentary stay at Hilton properties each year, KrisFlyer Miles Redemption Voucher, Accelerated upgrade to KrisFlyer Elite Gold",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Platinum Credit Card",
+              "cardType": "Rewards",
+              "annualFee": "S$327 (incl. of 9% GST)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Receive 45,000 Membership Rewards® points",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 50000,
+              "specialConditions": "Up to S$200 Fashion and Dining Credit, Love Dining program access, Chillax by Platinum drinks",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Platinum Reserve Credit Card",
+              "cardType": "Rewards",
+              "annualFee": "S$545 (incl. of 9% GST)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Complimentary one night stay every Card membership year",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Complimentary access to Tower Club Singapore, Love Dining program access, Complimentary one night stay at Frasers Hospitality properties",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Singapore Airlines KrisFlyer Credit Card",
+              "cardType": "Miles",
+              "annualFee": "S$179.85 (incl. of 9% GST) waived for the first year",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Receive up to 14,000 KrisFlyer miles",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "2 KrisFlyer miles for every S$1 spent on SIA/Scoot, S$150 Cashback at Singapore Airlines",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Singapore Airlines PPS Club Credit Card",
+              "cardType": "Miles",
+              "annualFee": "S$561.35 (incl. of 9% GST) waived for the first year",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Receive up to 47,500 KrisFlyer miles",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Exclusive to PPS Club members, Double KrisFlyer Miles Accrual Voucher, 50,000 KrisFlyer Miles Redemption Discount Voucher",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Singapore Airlines Solitaire PPS Credit Card",
+              "cardType": "Miles",
+              "annualFee": "S$561.35 (incl. of 9% GST) waived for the first year",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Receive up to 47,500 KrisFlyer miles",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Exclusive to Solitaire PPS members, Upgrade to Suites or First Class on SIA, 50,000 KrisFlyer Miles Redemption Discount Voucher",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® True Cashback Card",
+              "cardType": "Cashback",
+              "annualFee": "S$174.40 (incl. of 9% GST) waived for the first year",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Get up to S$150 Cashback (3% cashback on up to S$5,000 spend in first 6 months)",
+              "cashbackRates": {
+                "all": 1.5,
+                "welcome": 3
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Immediate Cashback in the same month's statement, no categories to track",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Gold Card",
+              "cardType": "Rewards",
+              "annualFee": "S$183.36 (incl. of 9% GST)",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Charge card, extensive cover and support",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Personal Card",
+              "cardType": "Rewards",
+              "annualFee": "S$122.24 (incl. of 9% GST)",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Charge card, offset purchases with points",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "American Express",
+              "cardName": "The American Express® Singapore Airlines Business Credit Card",
+              "cardType": "Miles",
+              "annualFee": "S$400.00 (incl. of 9% GST)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Receive up to 30,000 HighFlyer points",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Complimentary ALL Accor+ Explorer membership, Accelerated Upgrade to KrisFlyer Elite Gold",
+              "minimumMonthlySpend": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-219-249-216.tetra-data.production.tinyfish.io/tf-630e5ac7-d688-4675-8339-dd57811793b4/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://trustbank.sg/credit-card/",
+      "run_id": "704831e4-43fd-4de4-abc9-fb1c7ec08cd1",
+      "submit_response": {
+        "run_id": "704831e4-43fd-4de4-abc9-fb1c7ec08cd1",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "704831e4-43fd-4de4-abc9-fb1c7ec08cd1",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://trustbank.sg/credit-card/ to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:54:37Z",
+        "started_at": "2026-03-28T04:54:48Z",
+        "finished_at": "2026-03-28T04:57:44Z",
+        "num_of_steps": 16,
+        "result": {
+          "result": [
+            {
+              "bank": "Trust Bank",
+              "cardName": "Link credit card",
+              "cardType": "Rewards",
+              "annualFee": "0",
+              "payoutCycle": "Quarterly",
+              "signupBonus": "Sure-win gift (iPhone 17 Pro Max, Apple Watch, and more) for first spend.",
+              "cashbackRates": {
+                "caltex": 20,
+                "fairprice group": 21
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Up to 21% savings at FairPrice Group with S$800 minimum monthly spend outside FairPrice Group for 3 consecutive months.",
+              "minimumMonthlySpend": 800
+            },
+            {
+              "bank": "Trust Bank",
+              "cardName": "Cashback credit card",
+              "cardType": "Cashback",
+              "annualFee": "0",
+              "payoutCycle": "Quarterly",
+              "signupBonus": "Sure-win gift (iPhone 17 Pro Max, Apple Watch, and more) for first spend.",
+              "cashbackRates": {
+                "local": 1,
+                "foreign": 0.5,
+                "preferred category": 15
+              },
+              "monthlyCapSGD": 83.33,
+              "incomeRequirement": 30000,
+              "specialConditions": "15% bonus cashback on preferred category is capped at S$250 per quarter, requiring S$2,000 monthly spend for 3 consecutive months.",
+              "minimumMonthlySpend": 2000
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-219-249-216.tetra-data.production.tinyfish.io/tf-c8dadfb8-1526-418b-899b-55deb77d8bbd/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.uob.com.sg/personal/cards/index.page",
+      "run_id": "960fdad4-cd4f-45a3-a4d3-7e15cefca30a",
+      "submit_response": {
+        "run_id": "960fdad4-cd4f-45a3-a4d3-7e15cefca30a",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "960fdad4-cd4f-45a3-a4d3-7e15cefca30a",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.uob.com.sg/personal/cards/index.page to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:12Z",
+        "started_at": "2026-03-28T04:30:11Z",
+        "finished_at": "2026-03-28T04:32:15Z",
+        "num_of_steps": 8,
+        "result": {
+          "result": [
+            {
+              "bank": "UOB",
+              "cardName": "UOB One Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Quarterly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "daily spend": "10%",
+                "grocery spend": "8%",
+                "shell and spc fuel": "22.66%",
+                "eligible retail spend": "3.33%",
+                "singapore power utilities": "4.33%"
+              },
+              "monthlyCapSGD": 66.67,
+              "incomeRequirement": 30000,
+              "specialConditions": "Highest cashback requires S$2,000 spend for 3 consecutive months.",
+              "minimumMonthlySpend": 2000
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Absolute Cashback Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "all spend": "1.7%"
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "No spend exclusions.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB EVOL Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "No annual fees with 3 purchases monthly",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "overseas fx": "1%",
+                "local online": "10%",
+                "mobile contactless": "10%",
+                "selected gym/telco/streaming": "10%"
+              },
+              "monthlyCapSGD": 60,
+              "incomeRequirement": 30000,
+              "specialConditions": "0% FX fees worldwide.",
+              "minimumMonthlySpend": 800
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB PRVI Miles Cards",
+              "cardType": "Miles",
+              "annualFee": "S$259.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "2.4 miles per S$1 overseas, 1.4 miles local.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "Lazada-UOB Card",
+              "cardType": "Shopping",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "dining": "5%",
+                "transport": "5%",
+                "lazada spend": "20%",
+                "entertainment": "5%"
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Rebates issued as Lazada Gift Card credits.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Lady’s Credit Card",
+              "cardType": "Rewards",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "10X UNI$ on preferred categories.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Lady's Solitaire Card",
+              "cardType": "Rewards",
+              "annualFee": "S$410.40",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "10X UNI$ on two preferred categories.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "KrisFlyer UOB Credit Card",
+              "cardType": "Miles",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "3 miles per S$1 on SIA, Scoot, and KrisShop.",
+              "minimumMonthlySpend": 800
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Visa Infinite Metal Card",
+              "cardType": "Miles",
+              "annualFee": "S$654.00",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Up to 60,000 air miles with min. S$4,000 spend.",
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Includes lounge access and airport transfers.",
+              "minimumMonthlySpend": 4000
+            },
+            {
+              "bank": "UOB",
+              "cardName": "Metro-UOB Card",
+              "cardType": "Shopping",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "metro purchases": "5%"
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Metro$ Rebates moving to Metro Treasured Points in 2026.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Preferred Visa Card",
+              "cardType": "Rewards",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "10X UNI$ on mobile contactless spend.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "Singtel-UOB Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "other spend": "0.3%",
+                "local online": "10%",
+                "mobile contactless": "10%",
+                "singtel/gomo spend": "12%"
+              },
+              "monthlyCapSGD": 300,
+              "incomeRequirement": 30000,
+              "specialConditions": "Subject to Singtel bill recurring payment.",
+              "minimumMonthlySpend": 500
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB One Debit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$18.00",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "grab": "4%",
+                "shopee": "4%",
+                "simplygo": "4%",
+                "mcdonald's": "4%",
+                "singtel/gomo": "1%",
+                "singapore power utilities": "1%"
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Requires S$500 monthly spend.",
+              "minimumMonthlySpend": 500
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB FX+ Debit Card",
+              "cardType": "Miles",
+              "annualFee": null,
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$60 cash sign up bonus.",
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "0% FX fees on worldwide spend.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Lady’s Debit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$18.00",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "dining": "5%",
+                "retail": "5%",
+                "lifestyle": "5%"
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Cashback via UOB$ programme.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "KrisFlyer UOB Debit Card",
+              "cardType": "Miles",
+              "annualFee": "S$18.00",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Earns 5 KrisFlyer miles per S$1 on SIA/Scoot spend.",
+              "minimumMonthlySpend": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-193-71-175.tetra-data.production.tinyfish.io/tf-6cc46eb6-b515-48e0-8d8a-153ff22966ff/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.hsbc.com.sg/credit-cards/",
+      "run_id": "ada3dcfb-7966-441c-82b9-5452e51b839b",
+      "submit_response": {
+        "run_id": "ada3dcfb-7966-441c-82b9-5452e51b839b",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "ada3dcfb-7966-441c-82b9-5452e51b839b",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.hsbc.com.sg/credit-cards/ to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:16Z",
+        "started_at": "2026-03-28T04:30:20Z",
+        "finished_at": "2026-03-28T04:35:02Z",
+        "num_of_steps": 23,
+        "result": {
+          "result": [
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Live+ Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "Waived for first year, waived from second year if spend > SGD12,500 per year",
+              "payoutCycle": "Quarterly",
+              "signupBonus": "up to SGD300 cashback or Samsonite luggage",
+              "cashbackRates": {
+                "dining": 8,
+                "others": 0.3,
+                "petrol": 5,
+                "shopping": 8,
+                "entertainment": 8
+              },
+              "monthlyCapSGD": 83.33,
+              "incomeRequirement": 30000,
+              "specialConditions": "Highest 8% cashback for first 2 quarters; Subject to min spend SGD1,000 in first quarter",
+              "minimumMonthlySpend": 600
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Revolution Credit Card",
+              "cardType": "Rewards",
+              "annualFee": "Waived",
+              "payoutCycle": "Monthly",
+              "signupBonus": "up to SGD300 cashback or luggage + SGD100",
+              "cashbackRates": {
+                "online": 2.5,
+                "others": 0.25,
+                "contactless": 2.5
+              },
+              "monthlyCapSGD": 37.5,
+              "incomeRequirement": 30000,
+              "specialConditions": "10X Reward points on eligible contactless payments and online transactions",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC TravelOne Credit Card",
+              "cardType": "Miles",
+              "annualFee": "SGD196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": "up to 36,000 miles",
+              "cashbackRates": {
+                "local": 1.2,
+                "foreign": 2.4
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Instant reward redemption with airline and hotel partners",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Advance Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "Waived for first year",
+              "payoutCycle": "Monthly",
+              "signupBonus": "up to SGD300 cashback or luggage + SGD100",
+              "cashbackRates": {
+                "above 2000": 2.5,
+                "below 2000": 1.5
+              },
+              "monthlyCapSGD": 70,
+              "incomeRequirement": 30000,
+              "specialConditions": "Eligible for local/overseas retail and recurring bill payments",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Visa Platinum Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "Waived for first 2 years",
+              "payoutCycle": "Quarterly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "fuel": 5,
+                "dining": 5,
+                "groceries": 5
+              },
+              "monthlyCapSGD": 83.33,
+              "incomeRequirement": 30000,
+              "specialConditions": "No longer offered for new cards from 21 June 2024",
+              "minimumMonthlySpend": 600
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Visa Infinite Credit Card",
+              "cardType": "Miles",
+              "annualFee": "SGD662.15",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "local": 1,
+                "overseas": 2
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Temporarily pausing applications",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Premier Mastercard",
+              "cardType": "Rewards",
+              "annualFee": "SGD708.50 (waived if Premier customer with TRB >= SGD200,000)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "up to 88,000 KrisFlyer miles",
+              "cashbackRates": {
+                "local": 1.4,
+                "overseas": 2.3
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Exclusively for HSBC Premier customers",
+              "minimumMonthlySpend": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-52-53-245-245.tetra-data.production.tinyfish.io/tf-778a5886-db12-42f7-a526-2f1083b66dc4/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.cimb.com.sg/en/personal/banking-with-us/cards/credit-cards.html",
+      "run_id": "7345a069-ee54-4f8c-9413-908fabf146c3",
+      "submit_response": {
+        "run_id": "7345a069-ee54-4f8c-9413-908fabf146c3",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "7345a069-ee54-4f8c-9413-908fabf146c3",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.cimb.com.sg/en/personal/banking-with-us/cards/credit-cards.html to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:20Z",
+        "started_at": "2026-03-28T04:35:41Z",
+        "finished_at": "2026-03-28T04:38:37Z",
+        "num_of_steps": 16,
+        "result": {
+          "result": [
+            {
+              "bank": "CIMB",
+              "cardName": "CIMB Founders Card",
+              "cardType": "Shopping",
+              "annualFee": "S$338",
+              "payoutCycle": null,
+              "signupBonus": "S$338 cashback with S$2,000 spend within first 60 days.",
+              "cashbackRates": {},
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Minimum age 21-70. S$100 add-on for Metal card. Fixed Deposit collateral S$10,000 if income requirement not met.",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "CIMB",
+              "cardName": "CIMB Visa Signature",
+              "cardType": "Cashback",
+              "annualFee": "Free for life",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$188 cashback (S$88 with S$108 spend in 30 days + S$100 with S$988 spend in 60 days)",
+              "cashbackRates": {
+                "beauty": 10,
+                "others": 0.2,
+                "cruises": 10,
+                "wellness": 10,
+                "groceries": 10,
+                "pet shops": 10,
+                "online shopping": 10,
+                "veterinary services": 10
+              },
+              "monthlyCapSGD": 100,
+              "incomeRequirement": 30000,
+              "specialConditions": "Max S$20 per category.",
+              "minimumMonthlySpend": 800
+            },
+            {
+              "bank": "CIMB",
+              "cardName": "CIMB World Mastercard",
+              "cardType": "Cashback",
+              "annualFee": "Free for life",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$188 cashback (S$88 with S$108 spend in 30 days + S$100 with S$988 spend in 60 days)",
+              "cashbackRates": {
+                "dining": 2,
+                "movies": 2,
+                "others": 1,
+                "luxury goods": 2,
+                "taxi and automobile": 2,
+                "online food delivery": 2,
+                "digital entertainment": 2
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "1% cashback if spend is below S$1,000.",
+              "minimumMonthlySpend": 1000
+            },
+            {
+              "bank": "CIMB",
+              "cardName": "CIMB Visa Infinite",
+              "cardType": "Cashback",
+              "annualFee": "Free for life",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$188 cashback (S$88 with S$108 spend in 30 days + S$100 with S$988 spend in 60 days)",
+              "cashbackRates": {
+                "others": 1,
+                "travel": 2,
+                "overseas": 2,
+                "online foreign currency": 2
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Fixed Deposit collateral S$50,000 if income requirement not met.",
+              "minimumMonthlySpend": 2000
+            },
+            {
+              "bank": "CIMB",
+              "cardName": "CIMB AWSM Card",
+              "cardType": "Cashback",
+              "annualFee": "Free for life",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "telco": 1,
+                "dining": 1,
+                "entertainment": 1,
+                "online shopping": 1
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 18000,
+              "specialConditions": "Designed for students and NSFs (18-29). No income requirement for students/NSFs.",
+              "minimumMonthlySpend": null
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-219-113-249.tetra-data.production.tinyfish.io/tf-43f8f5d5-cef7-43b6-b0ae-de40935d8904/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.ocbc.com/personal-banking/cards/credit-card.page",
+      "run_id": "99760c1e-7731-432b-b00f-cce00460e134",
+      "submit_response": {
+        "run_id": "99760c1e-7731-432b-b00f-cce00460e134",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "99760c1e-7731-432b-b00f-cce00460e134",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.ocbc.com/personal-banking/cards/credit-card.page to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:24Z",
+        "started_at": "2026-03-28T04:31:17Z",
+        "finished_at": "2026-03-28T04:35:09Z",
+        "num_of_steps": 28,
+        "result": {
+          "result": [
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC INFINITY Cashback Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (waived for 1 year)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$250 cashback or Samsonite luggage for new-to-card customers",
+              "cashbackRates": {
+                "all": 1.6
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Unlimited cashback with no minimum spend.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC 365 Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Up to S$150 cashback for new-to-card customers",
+              "cashbackRates": {
+                "dining": 5,
+                "petrol": 6,
+                "watsons": 3,
+                "groceries": 3,
+                "streaming": 3,
+                "utilities": 3,
+                "land transport": 3,
+                "electric vehicle charging": 3
+              },
+              "monthlyCapSGD": 160,
+              "incomeRequirement": 30000,
+              "specialConditions": "Spend below S$800 earns 0.25% cashback; cap is S$80/month for S$800 spend and S$160/month for S$1,600 spend.",
+              "minimumMonthlySpend": 800
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC Rewards Card",
+              "cardType": "Rewards",
+              "annualFee": "S$196.20 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$150 cashback or luggage for new-to-card customers",
+              "cashbackRates": {
+                "watsons": 4.17,
+                "shopping": 2.78,
+                "online retail": 2.78,
+                "department stores": 2.78
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "10 OCBC$ per S$1 spent on shopping; bonus points capped at 10,000 OCBC$ per month.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC 90°N Card",
+              "cardType": "Miles",
+              "annualFee": "S$196.20 (waived for 1 year)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Up to 30,000 miles or Samsonite luggage",
+              "cashbackRates": {
+                "local": 1.3,
+                "foreign": 2.1
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Miles earned as 90°N Miles which never expire.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC FRANK Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$150 cashback for new-to-card customers",
+              "cashbackRates": {
+                "online": 8,
+                "green merchants": 10,
+                "foreign currency": 8,
+                "contactless mobile": 8
+              },
+              "monthlyCapSGD": 100,
+              "incomeRequirement": 30000,
+              "specialConditions": "Cashback capped at S$25 per category (Foreign, Online, Contactless, Other).",
+              "minimumMonthlySpend": 800
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC VOYAGE Card",
+              "cardType": "Miles",
+              "annualFee": "S$498",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Up to 40,000 VOYAGE Miles",
+              "cashbackRates": {
+                "local": 1.3,
+                "foreign": 2.2
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "VOYAGE Miles never expire and can be used for any airline.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC Premier VOYAGE Card",
+              "cardType": "Miles",
+              "annualFee": "S$498",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Up to 40,000 VOYAGE Miles",
+              "cashbackRates": {
+                "local": 1.6,
+                "foreign": 2.3
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Available for Premier Banking customers only.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC Premier Visa Infinite Credit Card",
+              "cardType": "Miles",
+              "annualFee": "null (waived for Premier Banking customers)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "null",
+              "cashbackRates": {
+                "all": 2.24
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Earn 28 OCBC$ for every S$5 spent; exclusively for Premier Banking customers.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC NXT Credit Card",
+              "cardType": "Shopping",
+              "annualFee": "S$196.20 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "null",
+              "cashbackRates": {
+                "monthly bill < 1000": 0.5,
+                "monthly bill >= 1000": 1
+              },
+              "monthlyCapSGD": 100,
+              "incomeRequirement": 30000,
+              "specialConditions": "Interest-free auto-instalments for bills above S$100.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC Great Eastern Cashflo Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$163.50 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "null",
+              "cashbackRates": {
+                "monthly billed < 1000": 0.3,
+                "monthly billed >= 1000": 1.2
+              },
+              "monthlyCapSGD": 100,
+              "incomeRequirement": 30000,
+              "specialConditions": "Auto-instalment for Great Eastern insurance premiums.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC Platinum Credit Card",
+              "cardType": "Rewards",
+              "annualFee": "S$163.50 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "null",
+              "cashbackRates": {
+                "all": 0.28
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Earns 1 OCBC$ per S$1 spent.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "BEST-OCBC Credit Card",
+              "cardType": "Shopping",
+              "annualFee": "S$163.50 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "null",
+              "cashbackRates": {
+                "all other": 0.3,
+                "best denki": 3
+              },
+              "monthlyCapSGD": 100,
+              "incomeRequirement": 30000,
+              "specialConditions": "Invites to members-only sales and events at BEST Denki.",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC Arts Credit Card",
+              "cardType": "Rewards",
+              "annualFee": "S$163.50 (waived for 2 years)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "null",
+              "cashbackRates": {
+                "other": 0.28,
+                "arts merchants": 0.83
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "3x OCBC$ on SISTIC purchases and other arts merchants.",
+              "minimumMonthlySpend": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-177-85-233.tetra-data.production.tinyfish.io/tf-8686b7bd-27fd-406e-a094-2e20102b9a17/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.ocbc.com/personal-banking/cards/credit-card",
+      "run_id": "d12e30cc-4e48-4539-84b3-535e335e3355",
+      "submit_response": {
+        "run_id": "d12e30cc-4e48-4539-84b3-535e335e3355",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "d12e30cc-4e48-4539-84b3-535e335e3355",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.ocbc.com/personal-banking/cards/credit-card to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:28Z",
+        "started_at": "2026-03-28T04:30:11Z",
+        "finished_at": "2026-03-28T04:33:42Z",
+        "num_of_steps": 21,
+        "result": {
+          "result": "```json\n[\n  {\n    \"cardName\": \"OCBC INFINITY Cashback Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"all\": 1.6\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20 (waived for 1st year)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"No minimum spend or cashback limit\",\n    \"signupBonus\": \"Upsized welcome rewards available for new-to-card customers\"\n  },\n  {\n    \"cardName\": \"OCBC 365 Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"dining\": 5,\n      \"food delivery\": 5,\n      \"groceries\": 3,\n      \"land transport\": 3,\n      \"utilities\": 3,\n      \"online travel\": 3,\n      \"petrol\": 6,\n      \"watsons\": 3,\n      \"streaming\": 3,\n      \"ev charging\": 3,\n      \"other\": 0.3\n    },\n    \"minimumMonthlySpend\": 800,\n    \"monthlyCapSGD\": 160,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20 (waived for 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Minimum spend of S$800 required for bonus rates\",\n    \"signupBonus\": \"Upsized welcome rewards available\"\n  },\n  {\n    \"cardName\": \"OCBC Rewards Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": {\n      \"watsons\": 6,\n      \"online shopping\": 6,\n      \"retail\": 4,\n      \"other\": 0.4\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"S$196.20 (waived for 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Bonus capped at 10,000 OCBC$ per month\",\n    \"signupBonus\": \"Upsized welcome rewards available\"\n  },\n  {\n    \"cardName\": \"OCBC 90°N Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Miles\",\n    \"cashbackRates\": {\n      \"foreign currency\": 2.1,\n      \"local\": 1.3,\n      \"agoda\": 7\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"S$196.20 (waived for 1st year)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Miles never expire; No minimum spend required\",\n    \"signupBonus\": \"Upsized welcome rewards available\"\n  },\n  {\n    \"cardName\": \"OCBC FRANK Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"foreign currency\": 8,\n      \"online\": 8,\n      \"contactless mobile\": 8,\n      \"green merchants\": 10,\n      \"other\": 0.3\n    },\n    \"minimumMonthlySpend\": 800,\n    \"monthlyCapSGD\": 100,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20 (waived for 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Minimum spend of S$800 required\",\n    \"signupBonus\": \"Upsized welcome rewards available\"\n  },\n  {\n    \"cardName\": \"OCBC VOYAGE Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Miles\",\n    \"cashbackRates\": {\n      \"foreign currency\": 2.2,\n      \"local\": 1.3\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"S$498\",\n    \"incomeRequirement\": 120000,\n    \"specialConditions\": \"Unlimited lounge access; Miles never expire\",\n    \"signupBonus\": \"Welcome miles upon annual fee payment\"\n  },\n  {\n    \"cardName\": \"OCBC Premier VOYAGE Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Miles\",\n    \"cashbackRates\": {\n      \"foreign currency\": 2.3,\n      \"local\": 1.6\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"S$498\",\n    \"incomeRequirement\": 120000,\n    \"specialConditions\": \"Exclusively for Premier Banking customers; Miles never expire\",\n    \"signupBonus\": \"Welcome miles upon annual fee payment\"\n  },\n  {\n    \"cardName\": \"OCBC Premier Visa Infinite Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": {\n      \"local\": 2.2,\n      \"foreign currency\": 2.2\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"No annual fee\",\n    \"incomeRequirement\": 200000,\n    \"specialConditions\": \"Exclusively for OCBC Premier Banking customers\",\n    \"signupBonus\": null\n  },\n  {\n    \"cardName\": \"OCBC NXT Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"all\": 1\n    },\n    \"minimumMonthlySpend\": 1000,\n    \"monthlyCapSGD\": 100,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$196.20\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"1% rebate with S$1,000 spend, otherwise 0.5%\",\n    \"signupBonus\": \"Upsized welcome rewards available\"\n  },\n  {\n    \"cardName\": \"OCBC Great Eastern Cashflo Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Cashback\",\n    \"cashbackRates\": {\n      \"all\": 1.2\n    },\n    \"minimumMonthlySpend\": 1000,\n    \"monthlyCapSGD\": 100,\n    \"payoutCycle\": \"Monthly\",\n    \"annualFee\": \"S$163.50 (waived for 2 years)\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"1.2% rebate with S$1,000 spend, otherwise 0.3%\",\n    \"signupBonus\": \"Upsized welcome rewards available\"\n  },\n  {\n    \"cardName\": \"OCBC Platinum Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": {\n      \"all\": 0.4\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"S$163.50\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Earn 1 OCBC$ for every S$1 spent\",\n    \"signupBonus\": \"Upsized welcome rewards available\"\n  },\n  {\n    \"cardName\": \"BEST-OCBC Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Shopping\",\n    \"cashbackRates\": {\n      \"best denki\": 3,\n      \"other\": 0.3\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"S$163.50\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"3% cash rebate at BEST Denki\",\n    \"signupBonus\": null\n  },\n  {\n    \"cardName\": \"OCBC Arts Credit Card\",\n    \"bank\": \"OCBC\",\n    \"cardType\": \"Rewards\",\n    \"cashbackRates\": {\n      \"sistic\": 3,\n      \"other\": 0.4\n    },\n    \"minimumMonthlySpend\": 0,\n    \"monthlyCapSGD\": null,\n    \"payoutCycle\": null,\n    \"annualFee\": \"S$165.30\",\n    \"incomeRequirement\": 30000,\n    \"specialConditions\": \"Earn 3x points on SISTIC purchases\",\n    \"signupBonus\": null\n  }\n]\n```"
+        },
+        "error": null,
+        "streaming_url": "https://ip-18-144-33-15.tetra-data.production.tinyfish.io/tf-e0b3027e-5e0f-4386-adb2-0abd859f9584/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.gxs.com.sg/flexicard",
+      "run_id": "1ab79bba-83b5-42a5-9fe0-6f54fb60f316",
+      "submit_response": {
+        "run_id": "1ab79bba-83b5-42a5-9fe0-6f54fb60f316",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "1ab79bba-83b5-42a5-9fe0-6f54fb60f316",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.gxs.com.sg/flexicard to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:32Z",
+        "started_at": "2026-03-28T04:34:35Z",
+        "finished_at": "2026-03-28T04:36:18Z",
+        "num_of_steps": 12,
+        "result": {
+          "cards": [
+            {
+              "bank": "GXS Bank",
+              "cardName": "GXS FlexiCard",
+              "cardType": "Cashback",
+              "annualFee": "S$54.50 (waived for the first year)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Up to S$60 cash rewards (requires opening a GXS Savings Account, GXS FlexiCard, and GXS FlexiLoan)",
+              "cashbackRates": {
+                "gomo": 20,
+                "grab": 18,
+                "singtel": 20
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 0,
+              "specialConditions": "Interest-free, fee-based credit card with a S$500 credit limit. A S$5 flexi fee applies for each billing cycle if only a minimum payment is made. Between 21 and 55 years old, Singaporean citizen or PR.",
+              "minimumMonthlySpend": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-18-144-33-15.tetra-data.production.tinyfish.io/tf-db8a553a-2327-4e52-bd16-c246ccb58b5b/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.posb.com.sg/personal/cards",
+      "run_id": "3f7ee020-bcce-46b2-b721-302a9aede19c",
+      "submit_response": {
+        "run_id": "3f7ee020-bcce-46b2-b721-302a9aede19c",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "3f7ee020-bcce-46b2-b721-302a9aede19c",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.posb.com.sg/personal/cards to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:36Z",
+        "started_at": "2026-03-28T04:36:52Z",
+        "finished_at": "2026-03-28T04:38:35Z",
+        "num_of_steps": 12,
+        "result": {
+          "cards": [
+            {
+              "bank": "POSB",
+              "cardName": "POSB Everyday Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$288 cashback or Samsonite 28” luggage",
+              "cashbackRates": {
+                "fuel": 6,
+                "dining": 10,
+                "popular": 5,
+                "pet care": 3,
+                "simplygo": 10,
+                "groceries": 5,
+                "other spend": 0.3,
+                "online shopping": 5,
+                "malaysian ringgit spend": 10
+              },
+              "monthlyCapSGD": 20,
+              "incomeRequirement": 30000,
+              "specialConditions": "Minimum qualified spend of S$800 per month required for bonus rebates. Bonus rebates are capped at Daily$20 per month for several categories. Dining excludes fast food. Minimum S$15 spend required at Pet Lovers Centre.",
+              "minimumMonthlySpend": 800
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-52-53-213-198.tetra-data.production.tinyfish.io/tf-e65c8a5b-9368-4fba-8459-cb00de1cf22f/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_SIGNUP",
+      "url": "https://www.citibank.com.sg/credit-cards/promotions/always-ahead/index.html",
+      "run_id": "b14d428b-6186-41d7-9543-ef5b2688114a",
+      "submit_response": {
+        "run_id": "b14d428b-6186-41d7-9543-ef5b2688114a",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "b14d428b-6186-41d7-9543-ef5b2688114a",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.citibank.com.sg/credit-cards/promotions/always-ahead/index.html to complete the goal: You are scraping a Singapore bank promotions or campaign page.\n\nContext:\n- Region: Singapore\n- Goal: Extract signup bonuses and welcome offers\n\nSteps:\n1. Wait for full page load.\n2. Close popups.\n3. Scroll to load all promotions.\n4. Extract ALL active offers.\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Shopping\", \"Dining\", \"Travel\"\n- rewardType (string): \"Cash\", \"Miles\", \"Points\", \"Gift\", \"Voucher\"\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusive (boolean)\n- promoCode (string)\n\nRules:\n- Only include active promos\n- Use highest reward tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:39Z",
+        "started_at": "2026-03-28T04:27:06Z",
+        "finished_at": "2026-03-28T04:30:32Z",
+        "num_of_steps": 20,
+        "result": {
+          "result": [
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Prestige Card",
+              "cardType": "Travel",
+              "annualFee": "S$651.82",
+              "promoCode": null,
+              "rewardType": "Points",
+              "isExclusive": false,
+              "rewardValue": "162500",
+              "promoExpiryDate": "2026-06-30",
+              "spendWithinDays": 60,
+              "rewardDescription": "Up to 162,500 Citi ThankYouSM Points (65,000 Miles) with annual fee payment and S$14,000 qualifying spend.",
+              "minimumSpendToUnlock": 14000
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi PremierMiles Card",
+              "cardType": "Travel",
+              "annualFee": "S$196.20",
+              "promoCode": "PM30K",
+              "rewardType": "Miles",
+              "isExclusive": false,
+              "rewardValue": "30000",
+              "promoExpiryDate": "2026-05-04",
+              "spendWithinDays": 60,
+              "rewardDescription": "30,000 Bonus Citi Miles with annual fee payment and S$800 qualifying spend.",
+              "minimumSpendToUnlock": 800
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Rewards Card",
+              "cardType": "Shopping",
+              "annualFee": "S$196.20",
+              "promoCode": "REWARDS40K",
+              "rewardType": "Points",
+              "isExclusive": false,
+              "rewardValue": "40000",
+              "promoExpiryDate": "2026-05-04",
+              "spendWithinDays": 60,
+              "rewardDescription": "40,000 Bonus Citi ThankYouSM Points with annual fee payment and S$800 qualifying spend.",
+              "minimumSpendToUnlock": 800
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Cash Back+ Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (First year waived)",
+              "promoCode": "CPLUS8",
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "320",
+              "promoExpiryDate": "2026-05-04",
+              "spendWithinDays": 60,
+              "rewardDescription": "8% cash back (capped at S$320) on qualifying spend.",
+              "minimumSpendToUnlock": 800
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Cash Back Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (First year waived)",
+              "promoCode": "CBACK300",
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "300",
+              "promoExpiryDate": "2026-05-04",
+              "spendWithinDays": 60,
+              "rewardDescription": "S$300 cash back on S$800 qualifying spend.",
+              "minimumSpendToUnlock": 800
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi SMRT Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (First 2 years waived)",
+              "promoCode": "SMRT300",
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "300",
+              "promoExpiryDate": "2026-05-04",
+              "spendWithinDays": 60,
+              "rewardDescription": "S$300 cash back on S$800 qualifying spend.",
+              "minimumSpendToUnlock": 800
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi M1 Platinum Visa Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (First year waived)",
+              "promoCode": "M1300",
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "300",
+              "promoExpiryDate": "2026-05-04",
+              "spendWithinDays": 60,
+              "rewardDescription": "S$300 cash back on S$800 qualifying spend.",
+              "minimumSpendToUnlock": 800
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-219-113-249.tetra-data.production.tinyfish.io/tf-16acb739-581c-4a82-aada-7e030b4ccecf/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_SIGNUP",
+      "url": "https://www.maribank.sg/promo",
+      "run_id": "fcd15b04-4667-437c-852e-e2e96dad3a38",
+      "submit_response": {
+        "run_id": "fcd15b04-4667-437c-852e-e2e96dad3a38",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "fcd15b04-4667-437c-852e-e2e96dad3a38",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.maribank.sg/promo to complete the goal: You are scraping a Singapore bank promotions or campaign page.\n\nContext:\n- Region: Singapore\n- Goal: Extract signup bonuses and welcome offers\n\nSteps:\n1. Wait for full page load.\n2. Close popups.\n3. Scroll to load all promotions.\n4. Extract ALL active offers.\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Shopping\", \"Dining\", \"Travel\"\n- rewardType (string): \"Cash\", \"Miles\", \"Points\", \"Gift\", \"Voucher\"\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusive (boolean)\n- promoCode (string)\n\nRules:\n- Only include active promos\n- Use highest reward tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:58:00Z",
+        "started_at": "2026-03-28T04:58:12Z",
+        "finished_at": "2026-03-28T05:03:31Z",
+        "num_of_steps": 19,
+        "result": {
+          "cards": [
+            {
+              "bank": "MariBank",
+              "cardName": "Mari Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "0",
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "S$80",
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Up to S$80 new user rewards including S$30 Welcome Cashback for first S$300 spend within 30 days of card approval.",
+              "minimumSpendToUnlock": 300
+            },
+            {
+              "bank": "MariBank",
+              "cardName": "Mari Credit Card",
+              "cardType": "Travel",
+              "annualFee": "0",
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "1.5% Cashback",
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": null,
+              "rewardDescription": "1.5% Cashback on overseas spend with zero FX fees. Capped at the first S$1,500 overseas spend monthly.",
+              "minimumSpendToUnlock": 0
+            },
+            {
+              "bank": "MariBank",
+              "cardName": "Mari Debit Card",
+              "cardType": "Travel",
+              "annualFee": "0",
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "0.5% Cashback",
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": null,
+              "rewardDescription": "0.5% Cashback on overseas spend with zero FX fees. Capped at the first S$1,500 overseas spend monthly.",
+              "minimumSpendToUnlock": 0
+            },
+            {
+              "bank": "MariBank",
+              "cardName": "Mari Savings Account",
+              "cardType": null,
+              "annualFee": "0",
+              "promoCode": "Referral Code",
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "S$18",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": null,
+              "rewardDescription": "Referral reward for referrers: S$18 cash for every friend who successfully signs up for MariBank Personal Banking using your referral code.",
+              "minimumSpendToUnlock": 0
+            },
+            {
+              "bank": "MariBank",
+              "cardName": "Mari Savings Account",
+              "cardType": null,
+              "annualFee": "0",
+              "promoCode": null,
+              "rewardType": "Points",
+              "isExclusive": false,
+              "rewardValue": "2.88% p.a.",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Promotional interest rate of 2.88% p.a. for new Fixed Deposit placements held to maturity.",
+              "minimumSpendToUnlock": 0
+            },
+            {
+              "bank": "MariBank",
+              "cardName": "Mari Business Account",
+              "cardType": null,
+              "annualFee": "0",
+              "promoCode": "Referral Code",
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "S$28",
+              "promoExpiryDate": "2026-04-30",
+              "spendWithinDays": null,
+              "rewardDescription": "SME Referral Program: S$28 cash for every successful referral of an SME that opens a MariBank Business Banking Account.",
+              "minimumSpendToUnlock": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-193-110-241.tetra-data.production.tinyfish.io/tf-1d68ebcb-9a94-4671-81a5-17060adc2859/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_SIGNUP",
+      "url": "https://www.uob.com.sg/personal/promotions/cards/sign-up-offers/index.page",
+      "run_id": "8445da5c-d379-48f0-864b-1480f9e4bc7a",
+      "submit_response": {
+        "run_id": "8445da5c-d379-48f0-864b-1480f9e4bc7a",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "8445da5c-d379-48f0-864b-1480f9e4bc7a",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.uob.com.sg/personal/promotions/cards/sign-up-offers/index.page to complete the goal: You are scraping a Singapore bank promotions or campaign page.\n\nContext:\n- Region: Singapore\n- Goal: Extract signup bonuses and welcome offers\n\nSteps:\n1. Wait for full page load.\n2. Close popups.\n3. Scroll to load all promotions.\n4. Extract ALL active offers.\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Shopping\", \"Dining\", \"Travel\"\n- rewardType (string): \"Cash\", \"Miles\", \"Points\", \"Gift\", \"Voucher\"\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusive (boolean)\n- promoCode (string)\n\nRules:\n- Only include active promos\n- Use highest reward tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:43Z",
+        "started_at": "2026-03-28T04:25:48Z",
+        "finished_at": "2026-03-28T04:30:10Z",
+        "num_of_steps": 28,
+        "result": {
+          "result": [
+            {
+              "bank": "UOB",
+              "cardName": "UOB One Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Up to 10% cashback on daily spend and up to 8% cashback on grocery spend.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB EVOL Card",
+              "cardType": "Cashback",
+              "annualFee": "Waived with 3 monthly purchases",
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": null,
+              "rewardDescription": "Up to 10% cashback on local online, mobile contactless spend & more.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB PRVI Miles Card",
+              "cardType": "Miles",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Miles",
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Up to 8 miles per S$5 spend on Agoda & Expedia; 20,000 loyalty miles annually for Amex Exclusive.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "KrisFlyer UOB Credit Card",
+              "cardType": "Miles",
+              "annualFee": "Waived for first year",
+              "promoCode": null,
+              "rewardType": "Gift",
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Get up to 3 KrisFlyer miles per S$1 on daily spend; first year annual fee waived for new sign-ups.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Absolute Cashback Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "1.7% limitless cashback with no minimum spend and no spend exclusions.",
+              "minimumSpendToUnlock": 0
+            },
+            {
+              "bank": "UOB",
+              "cardName": "Lazada-UOB Card",
+              "cardType": "Shopping",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Voucher",
+              "isExclusive": false,
+              "rewardValue": "S$200",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Apply now to get S$200 worth of Lazada Vouchers and up to 20% rebates on Lazada.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Lady’s Card",
+              "cardType": "Shopping",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Points",
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Up to 25X UNI$ per S$5 spend on preferred rewards categories.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB Visa Infinite Metal Card",
+              "cardType": "Travel",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Miles",
+              "isExclusive": false,
+              "rewardValue": "80,000",
+              "promoExpiryDate": null,
+              "spendWithinDays": 30,
+              "rewardDescription": "Get up to 80,000 air miles with min. S$4,000 spend within 30 days from Card approval date.",
+              "minimumSpendToUnlock": 4000
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-177-85-233.tetra-data.production.tinyfish.io/tf-87ffd77c-778e-41d6-b114-0417d3870c06/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_SIGNUP",
+      "url": "https://www.hsbc.com.sg/promotions/credit-cards/",
+      "run_id": "0bd36968-fb45-4146-a9d0-5e6b6529466a",
+      "submit_response": {
+        "run_id": "0bd36968-fb45-4146-a9d0-5e6b6529466a",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "0bd36968-fb45-4146-a9d0-5e6b6529466a",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.hsbc.com.sg/promotions/credit-cards/ to complete the goal: You are scraping a Singapore bank promotions or campaign page.\n\nContext:\n- Region: Singapore\n- Goal: Extract signup bonuses and welcome offers\n\nSteps:\n1. Wait for full page load.\n2. Close popups.\n3. Scroll to load all promotions.\n4. Extract ALL active offers.\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Shopping\", \"Dining\", \"Travel\"\n- rewardType (string): \"Cash\", \"Miles\", \"Points\", \"Gift\", \"Voucher\"\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusive (boolean)\n- promoCode (string)\n\nRules:\n- Only include active promos\n- Use highest reward tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:47Z",
+        "started_at": "2026-03-28T04:32:23Z",
+        "finished_at": "2026-03-28T04:35:39Z",
+        "num_of_steps": 15,
+        "result": {
+          "result": [
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Live+ Credit Card",
+              "cardType": "Dining",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Gift",
+              "isExclusive": false,
+              "rewardValue": "Samsonite VOYA Spinner 68cm Exp Scale (worth SGD 680) + SGD 100 cashback",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "New cardholders can choose between a Samsonite luggage plus SGD 100 cashback or a total of SGD 300 cashback upon meeting the spend requirement and providing marketing consent.",
+              "minimumSpendToUnlock": 1000
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Revolution Credit Card",
+              "cardType": "Shopping",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Gift",
+              "isExclusive": false,
+              "rewardValue": "Samsonite VOYA Spinner 68cm Exp Scale (worth SGD 680) + SGD 100 cashback",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "New cardholders can choose between a Samsonite luggage plus SGD 100 cashback or a total of SGD 300 cashback upon meeting the spend requirement and providing marketing consent.",
+              "minimumSpendToUnlock": 1000
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Advance Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Gift",
+              "isExclusive": false,
+              "rewardValue": "Samsonite VOYA Spinner 68cm Exp Scale (worth SGD 680) + SGD 100 cashback",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "New cardholders can choose between a Samsonite luggage plus SGD 100 cashback or a total of SGD 300 cashback upon meeting the spend requirement and providing marketing consent.",
+              "minimumSpendToUnlock": 1000
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC TravelOne Credit Card",
+              "cardType": "Travel",
+              "annualFee": "196.20",
+              "promoCode": null,
+              "rewardType": "Miles",
+              "isExclusive": false,
+              "rewardValue": "36,000 miles",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "Receive up to 36,000 miles (awarded as 90,000 Reward points) for new cardholders when spending at least SGD 1,000 and paying the annual fee.",
+              "minimumSpendToUnlock": 1000
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Premier Mastercard",
+              "cardType": "Travel",
+              "annualFee": "0",
+              "promoCode": null,
+              "rewardType": "Miles",
+              "isExclusive": true,
+              "rewardValue": "88,000 KrisFlyer miles",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "Up to 88,000 KrisFlyer miles (264,000 Reward Points) for new Premier Qualified customers who meet the minimum spend criteria.",
+              "minimumSpendToUnlock": 5000
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-219-113-249.tetra-data.production.tinyfish.io/tf-bdee610c-b67c-4488-951e-0f3d08d55a0a/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_SIGNUP",
+      "url": "https://cardpromotions.hsbc.com.sg/",
+      "run_id": "db5abfbd-2d6a-4bb3-b904-3f275539f539",
+      "submit_response": {
+        "run_id": "db5abfbd-2d6a-4bb3-b904-3f275539f539",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "db5abfbd-2d6a-4bb3-b904-3f275539f539",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://cardpromotions.hsbc.com.sg/ to complete the goal: You are scraping a Singapore bank promotions or campaign page.\n\nContext:\n- Region: Singapore\n- Goal: Extract signup bonuses and welcome offers\n\nSteps:\n1. Wait for full page load.\n2. Close popups.\n3. Scroll to load all promotions.\n4. Extract ALL active offers.\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Shopping\", \"Dining\", \"Travel\"\n- rewardType (string): \"Cash\", \"Miles\", \"Points\", \"Gift\", \"Voucher\"\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusive (boolean)\n- promoCode (string)\n\nRules:\n- Only include active promos\n- Use highest reward tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:51Z",
+        "started_at": "2026-03-28T04:39:05Z",
+        "finished_at": "2026-03-28T04:43:31Z",
+        "num_of_steps": 28,
+        "result": {
+          "result": [
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Live+ Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "promoCode": "LIV1",
+              "rewardType": "Points",
+              "isExclusive": true,
+              "rewardValue": "S$300",
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "S$300 SPM EV charging credits (fulfilled as 30,000 points)",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC TravelOne Credit Card",
+              "cardType": "Miles",
+              "annualFee": "196.20",
+              "promoCode": "PWSSPM",
+              "rewardType": "Points",
+              "isExclusive": true,
+              "rewardValue": "S$300",
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "S$300 SPM EV charging credits (fulfilled as 30,000 points)",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Revolution Credit Card",
+              "cardType": "Shopping",
+              "annualFee": "0",
+              "promoCode": "GLS5",
+              "rewardType": "Points",
+              "isExclusive": true,
+              "rewardValue": "S$300",
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "S$300 SPM EV charging credits (fulfilled as 30,000 points)",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Advance Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "promoCode": "MJY1",
+              "rewardType": "Points",
+              "isExclusive": true,
+              "rewardValue": "S$300",
+              "promoExpiryDate": "2026-12-31",
+              "spendWithinDays": 60,
+              "rewardDescription": "S$300 SPM EV charging credits (fulfilled as 30,000 points)",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Credit Cards (General)",
+              "cardType": "Travel",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Gift",
+              "isExclusive": false,
+              "rewardValue": "S$680",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Sign-up gift worth up to SGD680",
+              "minimumSpendToUnlock": null
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-52-53-213-198.tetra-data.production.tinyfish.io/tf-365ea4ea-7e64-4c50-b61a-1bcc73545332/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_SIGNUP",
+      "url": "https://www.sc.com/sg/promotions/",
+      "run_id": "62519f3a-0d64-4e9f-8338-78f33a3a2712",
+      "submit_response": {
+        "run_id": "62519f3a-0d64-4e9f-8338-78f33a3a2712",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "62519f3a-0d64-4e9f-8338-78f33a3a2712",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.sc.com/sg/promotions/ to complete the goal: You are scraping a Singapore bank promotions or campaign page.\n\nContext:\n- Region: Singapore\n- Goal: Extract signup bonuses and welcome offers\n\nSteps:\n1. Wait for full page load.\n2. Close popups.\n3. Scroll to load all promotions.\n4. Extract ALL active offers.\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Shopping\", \"Dining\", \"Travel\"\n- rewardType (string): \"Cash\", \"Miles\", \"Points\", \"Gift\", \"Voucher\"\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusive (boolean)\n- promoCode (string)\n\nRules:\n- Only include active promos\n- Use highest reward tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:17:54Z",
+        "started_at": "2026-03-28T04:39:14Z",
+        "finished_at": "2026-03-28T04:41:05Z",
+        "num_of_steps": 11,
+        "result": {
+          "result": [
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Simply Cash Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Gift",
+              "isExclusive": true,
+              "rewardValue": "S$710",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Get S$710 worth of Welcome Gifts. Earn 1.5% uncapped cashback with no minimum spend.",
+              "minimumSpendToUnlock": 0
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Journey Credit Card",
+              "cardType": "Miles",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Miles",
+              "isExclusive": false,
+              "rewardValue": "45,000 miles",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Get up to 45,000 miles with your Journey Credit Card. Earn up to 3 miles per S$1 spend.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Bonus$aver Account",
+              "cardType": null,
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "S$188",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Get S$188 cashback when you sign up for a Bonus$aver Account and a Bonus$aver World Mastercard Credit Card. Up to 7.05% p.a interest.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Wealth $aver Account",
+              "cardType": null,
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Gift",
+              "isExclusive": false,
+              "rewardValue": "S$23,888",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Receive welcome gifts of up to S$23,888 in value when you sign up for Priority Banking. Includes +1% Unlimited Cashback on your debit card.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "CashOne Personal Loan",
+              "cardType": null,
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "S$9,700",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Up to 3.88% cashback (up to S$9,700). Lowest rates from 1.08% p.a. (EIR from 2.09% p.a.).",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Credit Card Funds Transfer",
+              "cardType": null,
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "S$888",
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "0.8% cashback for new clients (up to S$888). 0% interest with processing fees from 0.99%.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Smart Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": null,
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Earn rewards on daily spends.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Rewards+ Credit Card",
+              "cardType": "Shopping",
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Points",
+              "isExclusive": false,
+              "rewardValue": null,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Earn points on your spends.",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "e$aver Account",
+              "cardType": null,
+              "annualFee": null,
+              "promoCode": null,
+              "rewardType": "Points",
+              "isExclusive": false,
+              "rewardValue": "3.50% p.a.",
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": null,
+              "rewardDescription": "Enjoy up to 3.50% p.a. interest on your savings.",
+              "minimumSpendToUnlock": null
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-176-172-16.tetra-data.production.tinyfish.io/tf-6e962730-b255-42df-8521-e9e8de69df0e/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "BANK_SIGNUP",
+      "url": "https://www.ocbc.com/personal-banking/cards/featured-campaign",
+      "run_id": "bdb89d30-b207-4831-8138-63d5d5432549",
+      "submit_response": {
+        "run_id": "bdb89d30-b207-4831-8138-63d5d5432549",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "bdb89d30-b207-4831-8138-63d5d5432549",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.ocbc.com/personal-banking/cards/featured-campaign to complete the goal: You are scraping a Singapore bank promotions or campaign page.\n\nContext:\n- Region: Singapore\n- Goal: Extract signup bonuses and welcome offers\n\nSteps:\n1. Wait for full page load.\n2. Close popups.\n3. Scroll to load all promotions.\n4. Extract ALL active offers.\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Shopping\", \"Dining\", \"Travel\"\n- rewardType (string): \"Cash\", \"Miles\", \"Points\", \"Gift\", \"Voucher\"\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusive (boolean)\n- promoCode (string)\n\nRules:\n- Only include active promos\n- Use highest reward tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:18:36Z",
+        "started_at": "2026-03-28T04:35:47Z",
+        "finished_at": "2026-03-28T04:39:39Z",
+        "num_of_steps": 19,
+        "result": {
+          "cards": [
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC Rewards Card",
+              "cardType": "Shopping",
+              "annualFee": "S$196.20 (waived for 2 years)",
+              "promoCode": null,
+              "rewardType": "Voucher",
+              "isExclusive": true,
+              "rewardValue": "150",
+              "promoExpiryDate": "2026-01-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "S$150 worth of Watsons vouchers for new OCBC Cardmembers",
+              "minimumSpendToUnlock": 1
+            },
+            {
+              "bank": "OCBC",
+              "cardName": "OCBC 365 Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (waived for 2 years)",
+              "promoCode": null,
+              "rewardType": "Cash",
+              "isExclusive": false,
+              "rewardValue": "160",
+              "promoExpiryDate": null,
+              "spendWithinDays": 30,
+              "rewardDescription": "Enjoy 2x more cashback of up to S$160 (monthly cap)",
+              "minimumSpendToUnlock": 800
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-52-53-245-245.tetra-data.production.tinyfish.io/tf-cf34a786-8558-4f21-b8fc-9da8878882b9/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": []
+      }
+    },
+    {
+      "category_name": "EATIGO",
+      "url": "https://eatigo.com/sg/singapore/en/restaurants",
+      "run_id": "67e7b17d-6284-4037-88b3-e98a6b47bd42",
+      "submit_response": {
+        "run_id": "67e7b17d-6284-4037-88b3-e98a6b47bd42",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "67e7b17d-6284-4037-88b3-e98a6b47bd42",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://eatigo.com/sg/singapore/en/restaurants to complete the goal: You are scraping Eatigo Singapore's restaurant deals page.\n\nSteps:\n1. Wait for listings to load.\n2. Close login popups.\n3. Extract all visible deals.\n\nFor each restaurant:\n- name (string)\n- location (string)\n- cuisine (string)\n- discount (string)\n- discountPercent (number)\n- validTimes (array)\n- validDays (string)\n- eligibleCards (array)\n- expiryDate (string)\n- pricePerPax (number)\n- bookingRequired (boolean)\n- availableSlots (number)\n\nRules:\n- Only active deals\n- 1-for-1 = 50%\n- eligibleCards = [] if unrestricted\n- Skip sold-out\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:19:55Z",
+        "started_at": "2026-03-28T04:21:06Z",
+        "finished_at": "2026-03-28T04:23:24Z",
+        "num_of_steps": 9,
+        "result": {
+          "result": [
+            {
+              "name": "Crossroads Buffet @ Singapore Marriott Tang Plaza Hotel",
+              "cuisine": "Buffet, International",
+              "discount": "-50%",
+              "location": "Singapore Marriott Tang Plaza Hotel, 320 Orchard Road",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "13:00",
+                "13:30",
+                "18:00",
+                "18:30",
+                "19:30",
+                "20:00",
+                "20:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 8,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Food Capital @ Grand Copthorne Waterfront Hotel",
+              "cuisine": "Buffet",
+              "discount": "-50%",
+              "location": "Grand Copthorne Waterfront Hotel",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "18:30",
+                "19:00",
+                "19:30",
+                "20:00",
+                "20:30",
+                "21:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 6,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "J65 @ JEN Singapore Tanglin by Shangri-La",
+              "cuisine": "Buffet, Seafood",
+              "discount": "-50%",
+              "location": "JEN Singapore Tanglin by Shangri-La",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "13:30",
+                "14:00",
+                "18:00",
+                "18:30",
+                "19:00",
+                "19:30",
+                "20:00",
+                "20:30",
+                "21:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 10,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "90 Minutes - Korean Tteokbokki Hotpot Buffet @ Bras Basah",
+              "cuisine": "Korean, Hotpot, Buffet",
+              "discount": "-50%",
+              "location": "Bras Basah",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "16:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 1,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Peppermint @ PARKROYAL COLLECTION Marina Bay",
+              "cuisine": "Buffet, Halal-certified",
+              "discount": "-50%",
+              "location": "PARKROYAL COLLECTION Marina Bay",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "13:30",
+                "21:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 2,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "The Orchard Cafe @ Orchard Hotel",
+              "cuisine": "Buffet",
+              "discount": "-50%",
+              "location": "Orchard Hotel",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "20:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 2,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Ellenborough Market Café @ Paradox Singapore",
+              "cuisine": "Buffet, Peranakan",
+              "discount": "-50%",
+              "location": "Paradox Singapore Merchant Court",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "14:00",
+                "20:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 2,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Mosella @ Pan Pacific Orchard Singapore",
+              "cuisine": "Mediterranean, Buffet",
+              "discount": "-50%",
+              "location": "Pan Pacific Orchard",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "18:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 1,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Town Restaurant @ The Fullerton Hotel Singapore",
+              "cuisine": "Buffet, International",
+              "discount": "-30%",
+              "location": "The Fullerton Hotel Singapore",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "13:00",
+                "13:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 3,
+              "bookingRequired": true,
+              "discountPercent": 30
+            },
+            {
+              "name": "Element @ Amara Singapore",
+              "cuisine": "Buffet, International",
+              "discount": "-50%",
+              "location": "Amara Singapore",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "13:30",
+                "20:00",
+                "20:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 4,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Opus Bar & Grill @ voco Orchard Singapore",
+              "cuisine": "Steakhouse, Grill",
+              "discount": "-50%",
+              "location": "voco Orchard Singapore",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "13:00",
+                "13:30",
+                "14:00",
+                "14:30",
+                "18:00",
+                "20:30",
+                "21:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 8,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Tiffany Cafe & Restaurant @ Furama City Centre",
+              "cuisine": "Buffet, Halal-certified",
+              "discount": "-50%",
+              "location": "Furama City Centre",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "13:00",
+                "20:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 3,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Sun's Cafe @ Hotel Grand Pacific",
+              "cuisine": "Buffet, Peranakan",
+              "discount": "-50%",
+              "location": "Hotel Grand Pacific",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "12:30",
+                "13:00",
+                "13:30",
+                "19:30",
+                "20:00",
+                "20:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 6,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Chara Brasserie @ Mercure ICON Singapore City Centre",
+              "cuisine": "Brasserie, International",
+              "discount": "-30%",
+              "location": "Mercure ICON Singapore City Centre",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "18:00",
+                "18:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 2,
+              "bookingRequired": true,
+              "discountPercent": 30
+            },
+            {
+              "name": "Jianghu Buffet @ Orchard Gateway",
+              "cuisine": "Hotpot, Buffet",
+              "discount": "-30%",
+              "location": "Orchard Gateway",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "15:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 1,
+              "bookingRequired": true,
+              "discountPercent": 30
+            },
+            {
+              "name": "90 Minutes (BBQ and Army Stew Buffet) @ Punggol Coast Mall",
+              "cuisine": "Korean BBQ, Army Stew",
+              "discount": "-50%",
+              "location": "Punggol Coast Mall",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "16:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 1,
+              "bookingRequired": true,
+              "discountPercent": 50
+            },
+            {
+              "name": "Ginger @ PARKROYAL on Beach Road",
+              "cuisine": "Buffet, Halal-certified",
+              "discount": "-30%",
+              "location": "PARKROYAL on Beach Road",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "13:00",
+                "13:30"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 2,
+              "bookingRequired": true,
+              "discountPercent": 30
+            },
+            {
+              "name": "Four Points Eatery @ Four Points by Sheraton Singapore, Riverview",
+              "cuisine": "Buffet, International",
+              "discount": "-50%",
+              "location": "Four Points by Sheraton Singapore, Riverview",
+              "validDays": "Daily",
+              "expiryDate": null,
+              "validTimes": [
+                "15:30",
+                "16:00"
+              ],
+              "pricePerPax": null,
+              "eligibleCards": [],
+              "availableSlots": 2,
+              "bookingRequired": true,
+              "discountPercent": 50
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-193-71-175.tetra-data.production.tinyfish.io/tf-3fc2e62c-9c3b-47d7-ab5b-0298bfd3534f/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": [
+          {
+            "id": "d6f1edd5-0a7a-4c34-b69d-8e0c4f95290a",
+            "timestamp": "2026-03-28T04:31:55Z",
+            "status": "RUNNING",
+            "action": "Navigate to Eatigo Singapore restaurants page.",
+            "screenshot": null,
+            "duration": "7.8s"
+          },
+          {
+            "id": "9b373f6c-a2f2-4953-8c29-835fcd8febde",
+            "timestamp": "2026-03-28T04:32:09Z",
+            "status": "RUNNING",
+            "action": "Click search to see restaurant listings.",
+            "screenshot": null,
+            "duration": "5.2s"
+          },
+          {
+            "id": "24ab027b-b5ad-4743-8ca0-ec59a694ce3b",
+            "timestamp": "2026-03-28T04:32:18Z",
+            "status": "RUNNING",
+            "action": "Extract details of visible restaurant deals.",
+            "screenshot": null,
+            "duration": "25.8s"
+          },
+          {
+            "id": "8b936943-ae98-489e-a7ec-54666889be24",
+            "timestamp": "2026-03-28T04:32:56Z",
+            "status": "RUNNING",
+            "action": "Check visual details of restaurant cards.",
+            "screenshot": null,
+            "duration": "3.6s"
+          },
+          {
+            "id": "5fda2e50-8baf-4ebb-8cb0-1a82145f0bf9",
+            "timestamp": "2026-03-28T04:33:11Z",
+            "status": "RUNNING",
+            "action": "Extract restaurant deal data from the list.",
+            "screenshot": null,
+            "duration": "13.2s"
+          },
+          {
+            "id": "41944f52-5903-4aea-a676-4a9dd46a15ab",
+            "timestamp": "2026-03-28T04:33:33Z",
+            "status": "RUNNING",
+            "action": "Check for price or other hidden details in a restaurant card.",
+            "screenshot": null,
+            "duration": "2.0s"
+          },
+          {
+            "id": "3c794792-d8f1-47a6-a21c-400ea75b3ca2",
+            "timestamp": "2026-03-28T04:33:46Z",
+            "status": "RUNNING",
+            "action": "Check restaurant detail page for missing fields.",
+            "screenshot": null,
+            "duration": "4.0s"
+          },
+          {
+            "id": "d4d64cd4-d245-43db-a099-1bbf30df6021",
+            "timestamp": "2026-03-28T04:33:59Z",
+            "status": "RUNNING",
+            "action": "Extract all requested fields from the restaurant detail page.",
+            "screenshot": null,
+            "duration": "4.5s"
+          },
+          {
+            "id": "684f05a6-c598-4b19-967e-d06bb3d4796d",
+            "timestamp": "2026-03-28T04:34:20Z",
+            "status": "RUNNING",
+            "action": "Return to search page for full extraction.",
+            "screenshot": null,
+            "duration": "5.6s"
+          },
+          {
+            "id": "efb0df9b-cfab-4f44-9684-7bc5ebaf16c5",
+            "timestamp": "2026-03-28T04:34:57Z",
+            "status": "COMPLETED",
+            "action": "Task completed",
+            "screenshot": null,
+            "duration": null
+          }
+        ]
+      }
+    },
+    {
+      "category_name": "MONEYSMART",
+      "url": "https://blog.moneysmart.sg/credit-cards/best-credit-card-promotions-singapore/",
+      "run_id": "3a172453-1d5e-42c6-af2f-ae10dac2da5a",
+      "submit_response": {
+        "run_id": "3a172453-1d5e-42c6-af2f-ae10dac2da5a",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "3a172453-1d5e-42c6-af2f-ae10dac2da5a",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://blog.moneysmart.sg/credit-cards/best-credit-card-promotions-singapore/ to complete the goal: You are scraping a MoneySmart Singapore credit card promotions article.\n\nSteps:\n1. Load full article\n2. Close popups\n3. Extract ALL card deals mentioned (tables + text)\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string)\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusiveDeal (boolean)\n- exclusivePromoCode (string)\n- extraGift (string)\n- estimatedTotalValue (string)\n- sourceSection (string)\n\nRules:\n- Include all cards mentioned\n- Use best available tier\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:21:12Z",
+        "started_at": "2026-03-28T04:23:32Z",
+        "finished_at": "2026-03-28T04:27:00Z",
+        "num_of_steps": 19,
+        "result": {
+          "result": [
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Cash Back+ Mastercard",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "$400",
+              "sourceSection": "Citibank credit card promotion",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": "2026-03-09",
+              "spendWithinDays": 30,
+              "rewardDescription": "$400 cash via PayNow OR 6,140 SmartPoints",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi PremierMiles Card",
+              "cardType": "Miles",
+              "annualFee": null,
+              "extraGift": "Chance to win 10-gram gold bar worth over S$2,300",
+              "rewardValue": "$430",
+              "sourceSection": "Citibank credit card promotion",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Get S$400 Cash via PayNow or 6,140 SmartPoints + extra S$30 Cash Bonus for first 10 successful applicants",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Rewards Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "extraGift": "Chance to win 10-gram gold bar worth over S$2,300",
+              "rewardValue": "$430",
+              "sourceSection": "Citibank credit card promotion",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Get S$400 Cash via PayNow or 6,140 SmartPoints + extra S$30 Cash Bonus for first 10 successful applicants",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Standard Chartered Simply Cash Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": "Chance to win 10-gram gold bar worth over S$2,309",
+              "rewardValue": "$350",
+              "sourceSection": "Standard Chartered credit card promotions",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "$350 cash via PayNow OR 4,000 SmartPoints",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "469",
+              "minimumSpendToUnlock": 800
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Standard Chartered Journey Credit Card",
+              "cardType": "Miles",
+              "annualFee": null,
+              "extraGift": "Up to 30,000 miles with annual fee payment",
+              "rewardValue": "$180",
+              "sourceSection": "Standard Chartered credit card promotions",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": "2026-03-09",
+              "spendWithinDays": 60,
+              "rewardDescription": "$180 cash via PayNow or 2,800 SmartPoints",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 800
+            },
+            {
+              "bank": "CIMB",
+              "cardName": "CIMB World Mastercard",
+              "cardType": "Cashback",
+              "annualFee": "Free for life",
+              "extraGift": "Up to $188 cashback",
+              "rewardValue": "$50",
+              "sourceSection": "CIMB credit card promotion",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "$50 cash + up to $188 cashback from CIMB",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 108
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB One Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": "Apple Watch SE 3 worth S$349",
+              "rewardValue": "$200",
+              "sourceSection": "UOB credit card promotions",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Up to S$200 Cash or 4,070 SmartPoints",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB PRVI Miles Visa Card",
+              "cardType": "Miles",
+              "annualFee": null,
+              "extraGift": "Apple Watch SE 3 worth S$349",
+              "rewardValue": "$200",
+              "sourceSection": "UOB credit card promotions",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Up to S$200 Cash or 4,070 SmartPoints",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "UOB",
+              "cardName": "UOB EVOL Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": "Apple Watch SE 3 worth S$349",
+              "rewardValue": "$200",
+              "sourceSection": "UOB credit card promotions",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Up to S$200 Cash or 4,070 SmartPoints",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Live+ Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": "S$30 Cash Bonus + chance to win 10-gram gold bar",
+              "rewardValue": "$430",
+              "sourceSection": "HSBC credit card promotions",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "S$430 Cash or 6,140 SmartPoints",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "cardName": "HSBC Advance Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": "Mystery Box (Apple Watch, PS5, or Nintendo Switch 2)",
+              "rewardValue": "$400",
+              "sourceSection": "HSBC credit card promotions",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": "2026-03-09",
+              "spendWithinDays": 30,
+              "rewardDescription": "6,140 SmartPoints OR $400 cash via PayNow",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "American Express",
+              "cardName": "American Express The Platinum Card®",
+              "cardType": "Points",
+              "annualFee": "$1,744",
+              "extraGift": null,
+              "rewardValue": "110,000 points",
+              "sourceSection": "AMEX credit card promotions",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 90,
+              "rewardDescription": "110,000 Membership Rewards® points",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 8000
+            },
+            {
+              "bank": "DBS",
+              "cardName": "DBS yuu Visa Card",
+              "cardType": "Rebates",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "18%",
+              "sourceSection": "DBS credit card promotions",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Up to 18% cash rebates or 10 miles per S$1",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": 600
+            },
+            {
+              "bank": "POSB",
+              "cardName": "POSB Everyday Card",
+              "cardType": "Rebates",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "10%",
+              "sourceSection": "POSB credit card promotion",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": null,
+              "rewardDescription": "Up to 10% Cash Rebates on Dining, Groceries, and SimplyGo",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Maybank",
+              "cardName": "Maybank XL Cashback Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "5%",
+              "sourceSection": "smartwidget_client",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "5% Cashback on Dine, Shop, Travel and Play categories",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Trust Bank",
+              "cardName": "Cashback Credit Card by Trust",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "15%",
+              "sourceSection": "smartwidget_client",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "Up to 15% Cashback on preferred category",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "DCS",
+              "cardName": "DCS Ultimate Platinum MasterCard",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "2%",
+              "sourceSection": "smartwidget_client",
+              "isExclusiveDeal": false,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": "2% Cashback on the first S$10,000 spent",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": null,
+              "minimumSpendToUnlock": null
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-177-85-233.tetra-data.production.tinyfish.io/tf-36599bba-1f4d-49b6-91af-6ec826575321/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": [
+          {
+            "id": "85c73045-528b-4239-be99-6be898155f1d",
+            "timestamp": "2026-03-28T04:35:13Z",
+            "status": "RUNNING",
+            "action": "Visit the MoneySmart blog post to scrape credit card promotions.",
+            "screenshot": null,
+            "duration": "6.5s"
+          },
+          {
+            "id": "593b7500-ff26-43a7-9fa9-77ca64612687",
+            "timestamp": "2026-03-28T04:35:29Z",
+            "status": "RUNNING",
+            "action": "Check for popups and article layout.",
+            "screenshot": null,
+            "duration": "2.6s"
+          },
+          {
+            "id": "27ba81a9-b4cc-4769-8fd7-9b178916c1d2",
+            "timestamp": "2026-03-28T04:35:41Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for Citi Rewards Card.",
+            "screenshot": null,
+            "duration": "1.8s"
+          },
+          {
+            "id": "9ebc0bbb-b496-4177-a0d9-5e5c79d77249",
+            "timestamp": "2026-03-28T04:35:53Z",
+            "status": "RUNNING",
+            "action": "Reveal details for Citi PremierMiles Card.",
+            "screenshot": null,
+            "duration": "1.6s"
+          },
+          {
+            "id": "1e7371a7-9947-4239-b80c-68fad35dc9e4",
+            "timestamp": "2026-03-28T04:36:07Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for Standard Chartered card.",
+            "screenshot": null,
+            "duration": "1.6s"
+          },
+          {
+            "id": "675e4517-a701-446e-b7d9-fb0121e8a24f",
+            "timestamp": "2026-03-28T04:36:22Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for CIMB card.",
+            "screenshot": null,
+            "duration": "2.3s"
+          },
+          {
+            "id": "979c3f77-fb60-44d8-aae7-35577c634b15",
+            "timestamp": "2026-03-28T04:36:34Z",
+            "status": "RUNNING",
+            "action": "Reveal details for UOB One card.",
+            "screenshot": null,
+            "duration": "2.4s"
+          },
+          {
+            "id": "e6335332-245e-43be-a70d-e0363ca265d7",
+            "timestamp": "2026-03-28T04:36:46Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for UOB PRVI Miles.",
+            "screenshot": null,
+            "duration": "2.1s"
+          },
+          {
+            "id": "ab3cfa41-206d-4b17-b752-b72905f854bb",
+            "timestamp": "2026-03-28T04:36:56Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for UOB EVOL.",
+            "screenshot": null,
+            "duration": "1.6s"
+          },
+          {
+            "id": "b4064a40-8ee2-4111-acaa-ce16c32b5536",
+            "timestamp": "2026-03-28T04:37:07Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for HSBC Live+.",
+            "screenshot": null,
+            "duration": "3.1s"
+          },
+          {
+            "id": "c6513a05-ec47-4512-bdff-5a680d700005",
+            "timestamp": "2026-03-28T04:37:19Z",
+            "status": "RUNNING",
+            "action": "Reveal details for Amex Platinum.",
+            "screenshot": null,
+            "duration": "1.6s"
+          },
+          {
+            "id": "e8db1f79-b522-4b1e-ad7a-4f4aa55d23a4",
+            "timestamp": "2026-03-28T04:37:30Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for DBS yuu Amex.",
+            "screenshot": null,
+            "duration": "1.6s"
+          },
+          {
+            "id": "735a1958-fbeb-4c6c-9175-3cb9544d244a",
+            "timestamp": "2026-03-28T04:37:36Z",
+            "status": "RUNNING",
+            "action": "Reveal more details for DBS yuu Visa.",
+            "screenshot": null,
+            "duration": "1.5s"
+          },
+          {
+            "id": "674e7d54-f361-487d-8c60-cd2b7e0a07af",
+            "timestamp": "2026-03-28T04:37:47Z",
+            "status": "RUNNING",
+            "action": "Extract card deals from the Citibank, Standard Chartered, and CIMB sections.",
+            "screenshot": null,
+            "duration": "3.7s"
+          },
+          {
+            "id": "bf59ea18-cd5c-46d3-8d5f-21a2992fe52a",
+            "timestamp": "2026-03-28T04:38:00Z",
+            "status": "RUNNING",
+            "action": "Extract card deals from the UOB, HSBC, and AMEX sections.",
+            "screenshot": null,
+            "duration": "12.8s"
+          },
+          {
+            "id": "e32717a0-3ded-482c-89af-cc4901522c6d",
+            "timestamp": "2026-03-28T04:38:34Z",
+            "status": "RUNNING",
+            "action": "Extract card deals from the DBS, POSB, and OCBC sections.",
+            "screenshot": null,
+            "duration": "9.7s"
+          },
+          {
+            "id": "5a7bab1a-2d93-4c1c-b221-0825ede69586",
+            "timestamp": "2026-03-28T04:38:55Z",
+            "status": "RUNNING",
+            "action": "Extract data for Citibank, Standard Chartered, and CIMB cards.",
+            "screenshot": null,
+            "duration": "17.4s"
+          },
+          {
+            "id": "b41c53a7-c045-48f0-80e5-e2f15c2ac6ac",
+            "timestamp": "2026-03-28T04:39:21Z",
+            "status": "RUNNING",
+            "action": "Extract any missed card deals from the overview and other text.",
+            "screenshot": null,
+            "duration": "3.6s"
+          },
+          {
+            "id": "17a62556-0c75-4e76-a801-a765bcd5f897",
+            "timestamp": "2026-03-28T04:39:29Z",
+            "status": "RUNNING",
+            "action": "Check for Maybank, Trust Bank, and other cards in the article text.",
+            "screenshot": null,
+            "duration": "9.5s"
+          },
+          {
+            "id": "f61b3893-0f80-4635-a723-253386ef6a6a",
+            "timestamp": "2026-03-28T04:40:07Z",
+            "status": "COMPLETED",
+            "action": "Task completed",
+            "screenshot": null,
+            "duration": null
+          }
+        ]
+      }
+    },
+    {
+      "category_name": "SINGSAVER",
+      "url": "https://www.singsaver.com.sg/credit-card/best",
+      "run_id": "d03a5141-d5b4-4d82-963d-e242b6519b2b",
+      "submit_response": {
+        "run_id": "d03a5141-d5b4-4d82-963d-e242b6519b2b",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "d03a5141-d5b4-4d82-963d-e242b6519b2b",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.singsaver.com.sg/credit-card/best to complete the goal: You are scraping SingSaver Singapore credit card listing page.\n\nSteps:\n1. Wait for full page load\n2. Close popups\n3. Extract ALL listed offers\n\nFor each offer:\n- cardName (string)\n- bank (string)\n- cardType (string)\n- rewardValue (string)\n- rewardDescription (string)\n- minimumSpendToUnlock (number)\n- spendWithinDays (number)\n- promoExpiryDate (string)\n- annualFee (string)\n- isExclusiveDeal (boolean)\n- exclusivePromoCode (string)\n- extraGift (string)\n- estimatedTotalValue (string)\n- applyUrl (string)\n\nRules:\n- Prioritise exclusive deals\n- Include ALL cards\n- If a field is missing, use null\n- Return raw JSON array only",
+        "created_at": "2026-03-28T04:21:22Z",
+        "started_at": "2026-03-28T04:21:33Z",
+        "finished_at": "2026-03-28T04:23:18Z",
+        "num_of_steps": 5,
+        "result": {
+          "result": [
+            {
+              "bank": "OCBC",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15020",
+              "cardName": "OCBC INFINITY Cashback Credit Card",
+              "cardType": "Mastercard",
+              "annualFee": "Waived for 1 year",
+              "extraGift": null,
+              "rewardValue": "S$849",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Apple MacBook Neo w/ Magic Keyboard",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$2,548",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "Citi",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15010",
+              "cardName": "Citi PremierMiles Card",
+              "cardType": "Visa",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$749",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Apple AirPods Max 2",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$3,297",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14866",
+              "cardName": "HSBC Revolution Credit Card",
+              "cardType": "Visa",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$799",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Dyson Airstrait™ straightener",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$2,548",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "DBS",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14810",
+              "cardName": "DBS yuu Visa Card",
+              "cardType": "Visa",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$340",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "eCapitaVoucher",
+              "exclusivePromoCode": "SINGSAVER",
+              "estimatedTotalValue": "S$2,528",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "OCBC",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15021",
+              "cardName": "OCBC 365 Credit Card",
+              "cardType": "Visa",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$370",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Cash via PayNow",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$2,548",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "Citi",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15015",
+              "cardName": "Citi SMRT Card",
+              "cardType": "Visa",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$749",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Apple AirPods Max 2",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$3,297",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "Citi",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15011",
+              "cardName": "Citi Rewards Card",
+              "cardType": "Mastercard",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$749",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Apple AirPods Max 2",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$3,297",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "OCBC",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15024",
+              "cardName": "OCBC 90°N Visa Card",
+              "cardType": "Visa",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": null,
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "20,000 90°N Miles",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$2,548",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "UOB",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14693",
+              "cardName": "UOB One Card",
+              "cardType": "Visa",
+              "annualFee": "S$196.20",
+              "extraGift": null,
+              "rewardValue": null,
+              "isExclusiveDeal": true,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": null,
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$360",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "Citi",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15012",
+              "cardName": "Citi Cash Back+ Card",
+              "cardType": "Mastercard",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$749",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Apple AirPods Max 2",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$3,297",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14868",
+              "cardName": "HSBC Live+ Credit Card",
+              "cardType": "Visa",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$799",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Dyson Airstrait™ straightener",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$2,548",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "CIMB",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14681",
+              "cardName": "CIMB World Mastercard",
+              "cardType": "Mastercard",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$50",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": null,
+              "spendWithinDays": null,
+              "rewardDescription": null,
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$238",
+              "minimumSpendToUnlock": null
+            },
+            {
+              "bank": "POSB",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14805",
+              "cardName": "POSB Everyday Card",
+              "cardType": "Mastercard",
+              "annualFee": "S$196.20",
+              "extraGift": null,
+              "rewardValue": null,
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": null,
+              "exclusivePromoCode": "SINGSAVER",
+              "estimatedTotalValue": "S$2,528",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "DBS",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14807",
+              "cardName": "DBS Altitude Visa Signature Card",
+              "cardType": "Visa Signature",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": null,
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": null,
+              "exclusivePromoCode": "SINGSAVER",
+              "estimatedTotalValue": "S$2,528",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "HSBC",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/14867",
+              "cardName": "HSBC TravelOne Credit Card",
+              "cardType": "Mastercard",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": "S$799",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "Dyson Airstrait™ straightener",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$2,548",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "OCBC",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2b/15022",
+              "cardName": "OCBC Rewards Credit Card",
+              "cardType": "Mastercard",
+              "annualFee": null,
+              "extraGift": null,
+              "rewardValue": null,
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": "50,000 OCBC$ (worth a round trip to Bali)",
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$2,548",
+              "minimumSpendToUnlock": 500
+            },
+            {
+              "bank": "Standard Chartered",
+              "applyUrl": "https://www.singsaver.com.sg/apply-v2a/14675",
+              "cardName": "Standard Chartered Simply Cash Credit Card",
+              "cardType": "Visa",
+              "annualFee": "Waived for 1 year",
+              "extraGift": null,
+              "rewardValue": "S$350",
+              "isExclusiveDeal": true,
+              "promoExpiryDate": "2026-03-31",
+              "spendWithinDays": 30,
+              "rewardDescription": null,
+              "exclusivePromoCode": null,
+              "estimatedTotalValue": "S$887",
+              "minimumSpendToUnlock": 500
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-219-113-249.tetra-data.production.tinyfish.io/tf-d68bee25-a7fd-44a7-920e-0307ebbb8580/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": [
+          {
+            "id": "c125a4e3-8294-425d-bf8e-109e25d04fb5",
+            "timestamp": "2026-03-28T04:32:26Z",
+            "status": "RUNNING",
+            "action": "Visit SingSaver credit card listing page.",
+            "screenshot": null,
+            "duration": "7.6s"
+          },
+          {
+            "id": "aff80582-327b-4686-bc37-7fc349b5b4ec",
+            "timestamp": "2026-03-28T04:32:42Z",
+            "status": "RUNNING",
+            "action": "Expand the list of all credit cards.",
+            "screenshot": null,
+            "duration": "1.5s"
+          },
+          {
+            "id": "5c0d9c81-3699-4841-9195-c159351d3535",
+            "timestamp": "2026-03-28T04:32:52Z",
+            "status": "RUNNING",
+            "action": "Extract credit card offer details.",
+            "screenshot": null,
+            "duration": "15.5s"
+          },
+          {
+            "id": "9727673d-c2fa-45aa-b707-f64391a09519",
+            "timestamp": "2026-03-28T04:33:22Z",
+            "status": "RUNNING",
+            "action": "Refine extraction of credit card details.",
+            "screenshot": null,
+            "duration": "12.8s"
+          },
+          {
+            "id": "6b0f1500-7363-426e-b706-b320eaeacec9",
+            "timestamp": "2026-03-28T04:33:56Z",
+            "status": "RUNNING",
+            "action": "Final check for annual fees and card types.",
+            "screenshot": null,
+            "duration": "6.2s"
+          },
+          {
+            "id": "832f6372-7d73-4b3f-8960-4aa33f63345a",
+            "timestamp": "2026-03-28T04:34:50Z",
+            "status": "COMPLETED",
+            "action": "Task completed",
+            "screenshot": null,
+            "duration": null
+          }
+        ]
+      }
+    }
+  ],
+  "started_at": "2026-03-28T12:17:04.044842",
+  "finished_at": "2026-03-28T12:43:39.551024",
+  "total_categories": 6
+}

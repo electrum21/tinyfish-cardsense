@@ -62,5 +62,5 @@ app.use((error: unknown, _request: express.Request, response: express.Response, 
 });
 
 app.listen(env.PORT, () => {
-  console.log(`API listening on port ${env.API_PORT}`);
+  console.log(`API listening on port ${env.PORT}`);
 });

@@ -61,9 +61,9 @@ export async function getSupabaseCollections() {
   }
 
   const [{ data: cashbackCards }, { data: signupOffers }, { data: merchantOffers }] = await Promise.all([
-    supabase.from("cashback_cards").select("*").order("created_at", { ascending: false }).limit(8),
-    supabase.from("signup_offers").select("*").order("created_at", { ascending: false }).limit(8),
-    supabase.from("merchant_offers").select("*").order("cashback_rate_number", { ascending: false }).limit(8)
+    supabase.from("cashback_cards").select("*").limit(8),
+    supabase.from("signup_offers").select("*").limit(8),
+    supabase.from("merchant_offers").select("*").limit(8)
   ]);
 
   return {

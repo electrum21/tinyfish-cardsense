@@ -29,9 +29,14 @@ app.get("/api/summary", async (_request, response, next) => {
     const snapshot = await fetchDashboardData();
 
     const overview = {
-      cashbackCardsCount: snapshot.cashbackCards.length,
-      merchantOffersCount: snapshot.merchantOffers.length,
-      signupOffersCount: snapshot.signupOffers.length
+      cashback_card_count: snapshot.cashbackCards.length,
+      signup_offer_count: snapshot.signupOffers.length,
+      merchant_offer_count: snapshot.merchantOffers.length,
+      max_merchant_cashback_rate:
+        snapshot.merchantOffers[0]?.cashback_rate_number ?? null,
+      exclusive_signup_offer_count: snapshot.signupOffers.filter(
+        (offer) => offer.is_exclusive_deal
+      ).length
     };
 
     response.json({

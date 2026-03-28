@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Route } from "next";
 import {
   getSummary,
   getSupabaseCollections,
@@ -22,7 +23,7 @@ function PreviewCard({
 }: {
   title: string;
   description: string;
-  href: string;
+  href: Route;
   children: React.ReactNode;
 }) {
   return (

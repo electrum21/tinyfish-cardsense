@@ -53,6 +53,7 @@ export async function getSupabaseCollections() {
   const supabase = createSupabaseServerClient();
 
   if (!supabase) {
+    console.error("Supabase client not created");
     return {
       cashbackCards: [],
       signupOffers: [],
@@ -70,9 +71,12 @@ export async function getSupabaseCollections() {
     supabase.from("merchant_offers").select("*").order("cashback_rate_number", { ascending: false }).limit(8)
   ]);
 
-  console.log("cashback_cards error:", cashbackError);
-  console.log("signup_offers error:", signupError);
-  console.log("merchant_offers error:", merchantError);
+  console.error("cashback_cards error:", cashbackError);
+  console.error("signup_offers error:", signupError);
+  console.error("merchant_offers error:", merchantError);
+  console.log("cashback rows:", cashbackCards?.length ?? 0);
+  console.log("signup rows:", signupOffers?.length ?? 0);
+  console.log("merchant rows:", merchantOffers?.length ?? 0);
 
   return {
     cashbackCards: cashbackCards ?? [],

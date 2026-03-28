@@ -113,54 +113,40 @@ export function CardsBrowser({ cards }: Props) {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search card, bank, type..."
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 outline-none"
+              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/35"
             />
           </div>
 
-          <div>
-            <label className="mb-2 block text-sm text-white/60">Bank</label>
-            <select
-              value={bank}
-              onChange={(e) => setBank(e.target.value)}
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 outline-none"
-            >
-              <option value="all">All banks</option>
-              {banks.map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-          </div>
+          <SelectField
+            label="Bank"
+            value={bank}
+            onChange={setBank}
+            options={[
+              { value: "all", label: "All banks" },
+              ...banks.map((value) => ({ value, label: value }))
+            ]}
+          />
 
-          <div>
-            <label className="mb-2 block text-sm text-white/60">Card Type</label>
-            <select
-              value={cardType}
-              onChange={(e) => setCardType(e.target.value)}
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 outline-none"
-            >
-              <option value="all">All types</option>
-              {cardTypes.map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-          </div>
+          <SelectField
+            label="Card Type"
+            value={cardType}
+            onChange={setCardType}
+            options={[
+              { value: "all", label: "All types" },
+              ...cardTypes.map((value) => ({ value, label: value }))
+            ]}
+          />
 
-          <div>
-            <label className="mb-2 block text-sm text-white/60">Annual Fee</label>
-            <select
-              value={feeFilter}
-              onChange={(e) => setFeeFilter(e.target.value as FeeFilter)}
-              className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 outline-none"
-            >
-              <option value="all">All</option>
-              <option value="waived">Waived / Free</option>
-              <option value="paid">Paid</option>
-            </select>
-          </div>
+          <SelectField
+            label="Annual Fee"
+            value={feeFilter}
+            onChange={(value) => setFeeFilter(value as FeeFilter)}
+            options={[
+              { value: "all", label: "All" },
+              { value: "waived", label: "Waived / Free" },
+              { value: "paid", label: "Paid" }
+            ]}
+          />
         </div>
 
         <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
@@ -170,15 +156,19 @@ export function CardsBrowser({ cards }: Props) {
 
           <div className="flex items-center gap-3">
             <label className="text-sm text-white/60">Sort by</label>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortKey)}
-              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 outline-none"
-            >
-              <option value="highest_cashback">Highest cashback</option>
-              <option value="name">Card name</option>
-              <option value="bank">Bank</option>
-            </select>
+            <div className="w-52">
+              <SelectField
+                label=""
+                hideLabel
+                value={sortBy}
+                onChange={(value) => setSortBy(value as SortKey)}
+                options={[
+                  { value: "highest_cashback", label: "Highest cashback" },
+                  { value: "name", label: "Card name" },
+                  { value: "bank", label: "Bank" }
+                ]}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -203,19 +193,11 @@ export function CardsBrowser({ cards }: Props) {
               <InfoItem label="Annual Fee" value={card.annual_fee ?? "--"} />
               <InfoItem
                 label="Income Requirement"
-                value={
-                  card.income_requirement
-                    ? `S$${card.income_requirement.toLocaleString()}`
-                    : "--"
-                }
+                value={card.income_requirement ? `S$${card.income_requirement.toLocaleString()}` : "--"}
               />
               <InfoItem
                 label="Minimum Monthly Spend"
-                value={
-                  card.minimum_monthly_spend
-                    ? `S$${card.minimum_monthly_spend.toLocaleString()}`
-                    : "--"
-                }
+                value={card.minimum_monthly_spend ? `S$${card.minimum_monthly_spend.toLocaleString()}` : "--"}
               />
               <InfoItem
                 label="Monthly Cap"
@@ -244,6 +226,48 @@ export function CardsBrowser({ cards }: Props) {
             No cards matched your filters.
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+function SelectField({
+  label,
+  value,
+  onChange,
+  options,
+  hideLabel = false
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: { value: string; label: string }[];
+  hideLabel?: boolean;
+}) {
+  return (
+    <div>
+      {!hideLabel && <label className="mb-2 block text-sm text-white/60">{label}</label>}
+
+      <div className="relative">
+        <select
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full appearance-none rounded-2xl border border-white/10 bg-slate-800 px-4 py-3 pr-10 text-white outline-none focus:border-cyan-400"
+        >
+          {options.map((option) => (
+            <option
+              key={option.value}
+              value={option.value}
+              className="bg-slate-900 text-white"
+            >
+              {option.label}
+            </option>
+          ))}
+        </select>
+
+        <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-white/50">
+          ▼
+        </div>
       </div>
     </div>
   );

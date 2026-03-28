@@ -1,186 +1,52 @@
-import { env } from "./env";
-import { createSupabaseServerClient } from "./supabase";
+"use client";
 
-export type SummaryPayload = {
-  overview: {
-    cashback_card_count: number;
-    signup_offer_count: number;
-    merchant_offer_count: number;
-    restaurant_deal_count: number;
-    exclusive_signup_offer_count: number;
-    max_merchant_cashback_rate: number | null;
-    bank_count: number;
-  };
-  spotlight: {
-    topMerchantOffer: Record<string, unknown> | null;
-    topSignupOffer: Record<string, unknown> | null;
-    topCashbackCard: Record<string, unknown> | null;
-  };
-};
+import Link from "next/link";
+import type { Route } from "next";
+import { usePathname } from "next/navigation";
 
-export type CashbackCard = {
-  id: string;
-  source: string | null;
-  source_url: string | null;
-  tinyfish_run_id: string | null;
-  bank: string | null;
-  card_name: string | null;
-  card_type: string | null;
-  cashback_rates: Record<string, number> | null;
-  minimum_monthly_spend: number | null;
-  monthly_cap_sgd: number | null;
-  payout_cycle: string | null;
-  annual_fee: string | null;
-  income_requirement: number | null;
-  special_conditions: string | null;
-  signup_bonus: string | null;
-  raw_payload?: unknown;
-};
+const links: { href: Route; label: string }[] = [
+  { href: "/", label: "Dashboard" },
+  { href: "/cards", label: "Cards" },
+  { href: "/signup-offers", label: "Signup Offers" },
+  { href: "/merchant-offers", label: "Merchant Offers" },
+  { href: "/advisor", label: "Advisor" }
+];
 
-export type SignupOffer = {
-  id: string;
-  source: string | null;
-  source_url: string | null;
-  tinyfish_run_id: string | null;
-  bank: string | null;
-  card_name: string | null;
-  card_type: string | null;
-  reward_value: string | null;
-  reward_description: string | null;
-  minimum_spend_to_unlock: number | null;
-  spend_within_days: number | null;
-  promo_expiry_date: string | null;
-  annual_fee: string | null;
-  is_exclusive_deal: boolean | null;
-  exclusive_promo_code: string | null;
-  apply_url: string | null;
-  raw_payload?: unknown;
-};
+export function SiteNav() {
+  const pathname = usePathname();
 
-export type MerchantOffer = {
-  id: string;
-  source: string | null;
-  source_url: string | null;
-  tinyfish_run_id: string | null;
-  category: string | null;
-  merchant: string | null;
-  cashback_rate: string | null;
-  cashback_rate_number: number | null;
-  raw_payload?: unknown;
-};
+  return (
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1020]/90 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/20 text-xl">
+            💳
+          </div>
+          <div>
+            <div className="text-xl font-bold tracking-tight">CardSense</div>
+            <div className="text-sm text-white/55">Singapore card intelligence</div>
+          </div>
+        </Link>
 
-export type CollectionsPayload = {
-  cashbackCards: CashbackCard[];
-  signupOffers: SignupOffer[];
-  merchantOffers: MerchantOffer[];
-};
-
-function emptySummary(): SummaryPayload {
-  return {
-    overview: {
-      cashback_card_count: 0,
-      signup_offer_count: 0,
-      merchant_offer_count: 0,
-      restaurant_deal_count: 0,
-      exclusive_signup_offer_count: 0,
-      max_merchant_cashback_rate: null,
-      bank_count: 0
-    },
-    spotlight: {
-      topMerchantOffer: null,
-      topSignupOffer: null,
-      topCashbackCard: null
-    }
-  };
-}
-
-export async function getSummary(): Promise<SummaryPayload> {
-  try {
-    const response = await fetch(`${env.apiBaseUrl}/api/summary`, {
-      next: { revalidate: 300 }
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch API summary: ${response.status}`);
-    }
-
-    return (await response.json()) as SummaryPayload;
-  } catch (error) {
-    console.error("getSummary error:", error);
-    return emptySummary();
-  }
-}
-
-export async function getAllCards(): Promise<CashbackCard[]> {
-  const supabase = createSupabaseServerClient();
-
-  if (!supabase) {
-    return [];
-  }
-
-  const { data, error } = await supabase
-    .from("cashback_cards")
-    .select("*")
-    .order("bank", { ascending: true });
-
-  if (error) {
-    console.error("getAllCards error:", error);
-    return [];
-  }
-
-  return (data ?? []) as CashbackCard[];
-}
-
-export async function getAllSignupOffers(): Promise<SignupOffer[]> {
-  const supabase = createSupabaseServerClient();
-
-  if (!supabase) {
-    return [];
-  }
-
-  const { data, error } = await supabase
-    .from("signup_offers")
-    .select("*")
-    .order("bank", { ascending: true });
-
-  if (error) {
-    console.error("getAllSignupOffers error:", error);
-    return [];
-  }
-
-  return (data ?? []) as SignupOffer[];
-}
-
-export async function getAllMerchantOffers(): Promise<MerchantOffer[]> {
-  const supabase = createSupabaseServerClient();
-
-  if (!supabase) {
-    return [];
-  }
-
-  const { data, error } = await supabase
-    .from("merchant_offers")
-    .select("*")
-    .order("cashback_rate_number", { ascending: false });
-
-  if (error) {
-    console.error("getAllMerchantOffers error:", error);
-    return [];
-  }
-
-  return (data ?? []) as MerchantOffer[];
-}
-
-export async function getSupabaseCollections(): Promise<CollectionsPayload> {
-  const [cashbackCards, signupOffers, merchantOffers] = await Promise.all([
-    getAllCards(),
-    getAllSignupOffers(),
-    getAllMerchantOffers()
-  ]);
-
-  return {
-    cashbackCards: cashbackCards.slice(0, 8),
-    signupOffers: signupOffers.slice(0, 8),
-    merchantOffers: merchantOffers.slice(0, 8)
-  };
+        <nav className="flex flex-wrap gap-2">
+          {links.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`rounded-2xl px-4 py-2 text-sm font-medium transition ${
+                  active
+                    ? "bg-cyan-400 text-slate-900"
+                    : "border border-white/10 bg-white/5 text-white/75 hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+    </header>
+  );
 }

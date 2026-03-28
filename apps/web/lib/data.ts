@@ -50,37 +50,22 @@ export async function getSummary() {
 }
 
 export async function getSupabaseCollections() {
-  const supabase = createSupabaseServerClient();
+  try {
+    const response = await fetch(`${env.apiBaseUrl}/api/collections`, {
+      next: { revalidate: 300 }
+    });
 
-  if (!supabase) {
-    console.error("Supabase client not created");
+    if (!response.ok) {
+      throw new Error("Failed to fetch collections");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("collections fetch error:", error);
     return {
       cashbackCards: [],
       signupOffers: [],
       merchantOffers: []
     };
   }
-
-  const [
-    { data: cashbackCards, error: cashbackError },
-    { data: signupOffers, error: signupError },
-    { data: merchantOffers, error: merchantError }
-  ] = await Promise.all([
-    supabase.from("cashback_cards").select("*").limit(8),
-    supabase.from("signup_offers").select("*").limit(8),
-    supabase.from("merchant_offers").select("*").order("cashback_rate_number", { ascending: false }).limit(8)
-  ]);
-
-  console.error("cashback_cards error:", cashbackError);
-  console.error("signup_offers error:", signupError);
-  console.error("merchant_offers error:", merchantError);
-  console.log("cashback rows:", cashbackCards?.length ?? 0);
-  console.log("signup rows:", signupOffers?.length ?? 0);
-  console.log("merchant rows:", merchantOffers?.length ?? 0);
-
-  return {
-    cashbackCards: cashbackCards ?? [],
-    signupOffers: signupOffers ?? [],
-    merchantOffers: merchantOffers ?? []
-  };
 }

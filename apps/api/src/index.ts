@@ -52,6 +52,21 @@ app.get("/api/summary", async (_request, response, next) => {
   }
 });
 
+app.get("/api/collections", async (_request, response, next) => {
+  try {
+    const snapshot = await fetchDashboardData();
+
+    response.json({
+      cashbackCards: snapshot.cashbackCards.slice(0, 8),
+      signupOffers: snapshot.signupOffers.slice(0, 8),
+      merchantOffers: snapshot.merchantOffers.slice(0, 8)
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 app.post("/api/recommendations", async (request, response, next) => {
   const bodySchema = z.object({
     preferences: z.string().min(10)

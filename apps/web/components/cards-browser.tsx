@@ -8,7 +8,7 @@ type Props = {
   cards: CashbackCard[];
 };
 
-type FeeFilter = "all" | "waived" | "has fee";
+type FeeFilter = "all" | "free" | "waived" | "paid";
 type SortKey = "name" | "bank" | "highest_cashback";
 
 function getHighestCashbackRate(card: CashbackCard): number {
@@ -29,9 +29,7 @@ function getHighestCashbackRate(card: CashbackCard): number {
   return Math.max(...values);
 }
 
-function matchesFeeFilter(annualFee: string | null, filter: FeeFilter): boolean {
-  if (filter === "all") return true;
-
+function getAnnualFeeCategory(annualFee: string | null): "free" | "waived" | "paid" {
   const normalized = (annualFee ?? "").toLowerCase().trim();
 
   const numericFee = Number(
@@ -47,16 +45,30 @@ function matchesFeeFilter(annualFee: string | null, filter: FeeFilter): boolean 
     normalized === "0.0" ||
     normalized === "s$0" ||
     normalized === "sgd0" ||
+    normalized === "no annual fee" ||
     (!Number.isNaN(numericFee) && numericFee === 0);
 
-  const waived =
-    isZeroFee ||
-    normalized.includes("waived") ||
-    normalized.includes("free") ||
-    normalized.includes("no annual fee");
+  if (isZeroFee || normalized.includes("free for life") || normalized.includes("free")) {
+    return "free";
+  }
 
-  if (filter === "waived") return waived;
-  return !waived;
+  if (normalized.includes("waived")) {
+    return "waived";
+  }
+
+  return "paid";
+}
+
+function formatAnnualFee(annualFee: string | null): string {
+  const category = getAnnualFeeCategory(annualFee);
+
+  if (category === "free") return "Free";
+  return annualFee ?? "--";
+}
+
+function matchesFeeFilter(annualFee: string | null, filter: FeeFilter): boolean {
+  if (filter === "all") return true;
+  return getAnnualFeeCategory(annualFee) === filter;
 }
 
 function toTitleCase(text: string): string {
@@ -191,7 +203,8 @@ export function CardsBrowser({ cards }: Props) {
             onChange={(value) => setFeeFilter(value as FeeFilter)}
             options={[
               { value: "all", label: "All" },
-              { value: "waived", label: "Waived / Free" },
+              { value: "free", label: "Free" },
+              { value: "waived", label: "Waived" },
               { value: "paid", label: "Paid" }
             ]}
           />
@@ -238,7 +251,7 @@ export function CardsBrowser({ cards }: Props) {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
-              <InfoItem label="Annual Fee" value={card.annual_fee ?? "--"} />
+              <InfoItem label="Annual Fee" value={formatAnnualFee(card.annual_fee)} />
               <InfoItem
                 label="Income Requirement"
                 value={card.income_requirement ? `S$${card.income_requirement.toLocaleString()}` : "--"}

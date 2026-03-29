@@ -8,7 +8,7 @@ type Props = {
   cards: CashbackCard[];
 };
 
-type FeeFilter = "all" | "waived" | "paid";
+type FeeFilter = "all" | "waived" | "has fee";
 type SortKey = "name" | "bank" | "highest_cashback";
 
 function getHighestCashbackRate(card: CashbackCard): number {
@@ -32,20 +32,31 @@ function getHighestCashbackRate(card: CashbackCard): number {
 function matchesFeeFilter(annualFee: string | null, filter: FeeFilter): boolean {
   if (filter === "all") return true;
 
-  const normalized = (annualFee ?? "").toLowerCase();
-  const waived = normalized.includes("waived") || normalized.includes("free");
+  const normalized = (annualFee ?? "").toLowerCase().trim();
+
+  const numericFee = Number(
+    normalized
+      .replace(/s\$/g, "")
+      .replace(/sgd/g, "")
+      .replace(/,/g, "")
+      .replace(/[^\d.]/g, "")
+  );
+
+  const isZeroFee =
+    normalized === "0" ||
+    normalized === "0.0" ||
+    normalized === "s$0" ||
+    normalized === "sgd0" ||
+    (!Number.isNaN(numericFee) && numericFee === 0);
+
+  const waived =
+    isZeroFee ||
+    normalized.includes("waived") ||
+    normalized.includes("free") ||
+    normalized.includes("no annual fee");
 
   if (filter === "waived") return waived;
   return !waived;
-}
-
-function toTitleCase(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[_-]/g, " ")
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
 }
 
 function cashbackSummary(card: CashbackCard): string {

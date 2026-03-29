@@ -39,6 +39,14 @@ function matchesFeeFilter(annualFee: string | null, filter: FeeFilter): boolean 
   return !waived;
 }
 
+function toTitleCase(text: string): string {
+  return text
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
 function cashbackSummary(card: CashbackCard): string {
   const rates = card.cashback_rates;
 
@@ -53,7 +61,16 @@ function cashbackSummary(card: CashbackCard): string {
 
   return entries
     .slice(0, 4)
-    .map(([category, value]) => `${category}: ${value}%`)
+    .map(([category, value]) => {
+      const formattedCategory = toTitleCase(category);
+
+      const valueStr = String(value);
+      const formattedValue = valueStr.includes("%")
+        ? valueStr
+        : `${valueStr}%`;
+
+      return `${formattedCategory}: ${formattedValue}`;
+    })
     .join(" · ");
 }
 

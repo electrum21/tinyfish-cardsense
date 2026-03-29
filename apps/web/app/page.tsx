@@ -109,7 +109,7 @@ export default async function DashboardPage() {
   ]);
 
   return (
-    <main className="mx-auto max-w-7xl px-6 py-8">
+    <main className="mx-auto w-full max-w-[1600px] px-4 py-8 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
       <section className="grid gap-6 lg:grid-cols-[1.3fr_0.9fr]">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-2xl">
           <div className="mb-4 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-200">

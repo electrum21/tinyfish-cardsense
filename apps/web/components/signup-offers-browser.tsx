@@ -97,8 +97,8 @@ export function SignupOffersBrowser({ offers }: Props) {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-          <div className="xl:col-span-2">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-12">
+          <div className="xl:col-span-4">
             <label className="mb-2 block text-sm text-white/60">Search</label>
             <input
               value={search}

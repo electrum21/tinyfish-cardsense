@@ -42,6 +42,7 @@ function matchesFeeFilter(annualFee: string | null, filter: FeeFilter): boolean 
 function toTitleCase(text: string): string {
   return text
     .toLowerCase()
+    .replace(/[_-]/g, " ")
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -55,11 +56,21 @@ function cashbackSummary(card: CashbackCard): string {
   }
 
   const entries = Object.entries(rates);
-  if (entries.length === 0) {
+
+  // 🚨 FILTER OUT null / undefined / empty
+  const filtered = entries.filter(
+    ([_, value]) =>
+      value !== null &&
+      value !== undefined &&
+      value !== "" &&
+      value !== "null"
+  );
+
+  if (filtered.length === 0) {
     return "--";
   }
 
-  return entries
+  return filtered
     .slice(0, 4)
     .map(([category, value]) => {
       const formattedCategory = toTitleCase(category);
@@ -124,8 +135,8 @@ export function CardsBrowser({ cards }: Props) {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-          <div className="xl:col-span-2">
+        <div className="grid gap-6 xl:grid-cols-2 2xl:grid-cols-3">
+          <div className="xl:col-span-3">
             <label className="mb-2 block text-sm text-white/60">Search</label>
             <input
               value={search}

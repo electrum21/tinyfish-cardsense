@@ -58,13 +58,13 @@ function cashbackSummary(card: CashbackCard): string {
   const entries = Object.entries(rates);
 
   // 🚨 FILTER OUT null / undefined / empty
-  const filtered = entries.filter(
-    ([_, value]) =>
-      value !== null &&
-      value !== undefined &&
-      value !== "" &&
-      value !== "null"
-  );
+  const filtered = entries.filter(([_, value]) => {
+    // Check if it's a number first
+    if (typeof value === 'number') return true; 
+    
+    // Otherwise, ensure it's not null, undefined, or empty strings
+    return value !== null && value !== undefined && value !== "" && value !== "null";
+  });
 
   if (filtered.length === 0) {
     return "--";

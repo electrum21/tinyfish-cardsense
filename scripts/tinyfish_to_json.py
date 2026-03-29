@@ -7,7 +7,7 @@ from datetime import datetime
 # ==========================================
 # 1. CONFIGURATION
 # ==========================================
-API_KEY = "API_KEY"  # replace with your real TinyFish API key
+API_KEY = "sk-tinyfish-XXBu4APK8SWnReC1OY4_KwMX2Go_mch9"  # replace with your real TinyFish API key
 BASE_URL = "https://agent.tinyfish.ai/v1"
 
 POLL_INTERVAL_SECONDS = 5
@@ -69,199 +69,202 @@ Rules:
 - Return raw JSON array only
 """.strip(),
         "urls": [
-            "https://www.americanexpress.com/en-sg/credit-cards/",
-            "https://trustbank.sg/credit-card/",
-            "https://www.uob.com.sg/personal/cards/index.page",
-            "https://www.hsbc.com.sg/credit-cards/",
-            "https://www.cimb.com.sg/en/personal/banking-with-us/cards/credit-cards.html",
-            "https://www.ocbc.com/personal-banking/cards/credit-card.page",
-            "https://www.ocbc.com/personal-banking/cards/credit-card",
-            "https://www.gxs.com.sg/flexicard",
-            "https://www.posb.com.sg/personal/cards",
-            "https://www.maybank2u.com.sg/en/personal/cards/credit/index.page"
+            # "https://www.americanexpress.com/en-sg/credit-cards/",
+            # "https://trustbank.sg/credit-card/",
+            # "https://www.uob.com.sg/personal/cards/index.page",
+            # "https://www.hsbc.com.sg/credit-cards/",
+            # "https://www.cimb.com.sg/en/personal/banking-with-us/cards/credit-cards.html",
+            # "https://www.ocbc.com/personal-banking/cards/credit-card.page",
+            # "https://www.ocbc.com/personal-banking/cards/credit-card",
+            # "https://www.gxs.com.sg/flexicard",
+            # "https://www.posb.com.sg/personal/cards",
+            # "https://www.maybank2u.com.sg/en/personal/cards/credit/index.page",
+            "https://www1.citibank.com.sg/credit-cards",
+            "https://www.sc.com/sg/credit-cards/?intcid=web_listing-sc_com_quick_tools-homepg1-staticmedia_others-sng-homepage_new-cc-acquisition-sc_com_organic-sg-en",
+            "https://www.maribank.sg/product/mari-credit-card",
         ],
     },
-    {
-        "category_name": "BANK_SIGNUP",
-        "goal": """
-You are scraping a Singapore bank promotions or campaign page.
+#     {
+#         "category_name": "BANK_SIGNUP",
+#         "goal": """
+# You are scraping a Singapore bank promotions or campaign page.
 
-Context:
-- Region: Singapore
-- Goal: Extract signup bonuses and welcome offers
+# Context:
+# - Region: Singapore
+# - Goal: Extract signup bonuses and welcome offers
 
-Steps:
-1. Wait for full page load.
-2. Close popups.
-3. Scroll to load all promotions.
-4. Extract ALL active offers.
+# Steps:
+# 1. Wait for full page load.
+# 2. Close popups.
+# 3. Scroll to load all promotions.
+# 4. Extract ALL active offers.
 
-For each offer:
-- cardName (string)
-- bank (string)
-- cardType (string): "Cashback", "Miles", "Shopping", "Dining", "Travel"
-- rewardType (string): "Cash", "Miles", "Points", "Gift", "Voucher"
-- rewardValue (string)
-- rewardDescription (string)
-- minimumSpendToUnlock (number)
-- spendWithinDays (number)
-- promoExpiryDate (string)
-- annualFee (string)
-- isExclusive (boolean)
-- promoCode (string)
+# For each offer:
+# - cardName (string)
+# - bank (string)
+# - cardType (string): "Cashback", "Miles", "Shopping", "Dining", "Travel"
+# - rewardType (string): "Cash", "Miles", "Points", "Gift", "Voucher"
+# - rewardValue (string)
+# - rewardDescription (string)
+# - minimumSpendToUnlock (number)
+# - spendWithinDays (number)
+# - promoExpiryDate (string)
+# - annualFee (string)
+# - isExclusive (boolean)
+# - promoCode (string)
 
-Rules:
-- Only include active promos
-- Use highest reward tier
-- If a field is missing, use null
-- Return raw JSON array only
-""".strip(),
-        "urls": [
-            "https://www.citibank.com.sg/credit-cards/promotions/always-ahead/index.html",
-            "https://www.uob.com.sg/personal/promotions/cards/sign-up-offers/index.page",
-            "https://www.hsbc.com.sg/promotions/credit-cards/",
-            "https://cardpromotions.hsbc.com.sg/",
-            "https://www.sc.com/sg/promotions/",
-            "https://www.ocbc.com/personal-banking/cards/featured-campaign",
-            "https://www.maribank.sg/promo",
-        ],
-    },
-    {
-        "category_name": "EATIGO",
-        "goal": """
-You are scraping Eatigo Singapore's restaurant deals page.
+# Rules:
+# - Only include active promos
+# - Use highest reward tier
+# - If a field is missing, use null
+# - Return raw JSON array only
+# """.strip(),
+#         "urls": [
+#             "https://www.citibank.com.sg/credit-cards/promotions/always-ahead/index.html",
+#             "https://www.uob.com.sg/personal/promotions/cards/sign-up-offers/index.page",
+#             "https://www.hsbc.com.sg/promotions/credit-cards/",
+#             "https://cardpromotions.hsbc.com.sg/",
+#             "https://www.sc.com/sg/promotions/",
+#             "https://www.ocbc.com/personal-banking/cards/featured-campaign",
+#             "https://www.maribank.sg/promo",
+#         ],
+#     },
+#     {
+#         "category_name": "EATIGO",
+#         "goal": """
+# You are scraping Eatigo Singapore's restaurant deals page.
 
-Steps:
-1. Wait for listings to load.
-2. Close login popups.
-3. Extract all visible deals.
+# Steps:
+# 1. Wait for listings to load.
+# 2. Close login popups.
+# 3. Extract all visible deals.
 
-For each restaurant:
-- name (string)
-- location (string)
-- cuisine (string)
-- discount (string)
-- discountPercent (number)
-- validTimes (array)
-- validDays (string)
-- eligibleCards (array)
-- expiryDate (string)
-- pricePerPax (number)
-- bookingRequired (boolean)
-- availableSlots (number)
+# For each restaurant:
+# - name (string)
+# - location (string)
+# - cuisine (string)
+# - discount (string)
+# - discountPercent (number)
+# - validTimes (array)
+# - validDays (string)
+# - eligibleCards (array)
+# - expiryDate (string)
+# - pricePerPax (number)
+# - bookingRequired (boolean)
+# - availableSlots (number)
 
-Rules:
-- Only active deals
-- 1-for-1 = 50%
-- eligibleCards = [] if unrestricted
-- Skip sold-out
-- Return raw JSON array only
-""".strip(),
-        "urls": [
-            "https://eatigo.com/sg/singapore/en/restaurants",
-        ],
-    },
-    {
-        "category_name": "SHOPBACK",
-        "goal": """
-You are scraping ShopBack Singapore cashback deals page.
+# Rules:
+# - Only active deals
+# - 1-for-1 = 50%
+# - eligibleCards = [] if unrestricted
+# - Skip sold-out
+# - Return raw JSON array only
+# """.strip(),
+#         "urls": [
+#             "https://eatigo.com/sg/singapore/en/restaurants",
+#         ],
+#     },
+#     {
+#         "category_name": "SHOPBACK",
+#         "goal": """
+# You are scraping ShopBack Singapore cashback deals page.
 
-For each offer:
-- merchant (string)
-- cashbackRate (string)
-- cashbackRateNumber (number)
-- isUpsized (boolean)
-- regularRate (string)
-- eligibleCards (array)
-- validUntil (string)
-- minSpend (number)
-- maxCashback (number)
-- category (string)
-- promoCode (string)
-- isCardLinked (boolean)
+# For each offer:
+# - merchant (string)
+# - cashbackRate (string)
+# - cashbackRateNumber (number)
+# - isUpsized (boolean)
+# - regularRate (string)
+# - eligibleCards (array)
+# - validUntil (string)
+# - minSpend (number)
+# - maxCashback (number)
+# - category (string)
+# - promoCode (string)
+# - isCardLinked (boolean)
 
-Rules:
-- Upsized = true when shown
-- "Up to X%" -> use X
-- If a field is missing, use null
-- Return raw JSON array only
-""".strip(),
-        "urls": [
-            "https://www.shopback.sg/food",
-        ],
-    },
-    {
-        "category_name": "MONEYSMART",
-        "goal": """
-You are scraping a MoneySmart Singapore credit card promotions article.
+# Rules:
+# - Upsized = true when shown
+# - "Up to X%" -> use X
+# - If a field is missing, use null
+# - Return raw JSON array only
+# """.strip(),
+#         "urls": [
+#             "https://www.shopback.sg/food",
+#         ],
+#     },
+#     {
+#         "category_name": "MONEYSMART",
+#         "goal": """
+# You are scraping a MoneySmart Singapore credit card promotions article.
 
-Steps:
-1. Load full article
-2. Close popups
-3. Extract ALL card deals mentioned (tables + text)
+# Steps:
+# 1. Load full article
+# 2. Close popups
+# 3. Extract ALL card deals mentioned (tables + text)
 
-For each offer:
-- cardName (string)
-- bank (string)
-- cardType (string)
-- rewardValue (string)
-- rewardDescription (string)
-- minimumSpendToUnlock (number)
-- spendWithinDays (number)
-- promoExpiryDate (string)
-- annualFee (string)
-- isExclusiveDeal (boolean)
-- exclusivePromoCode (string)
-- extraGift (string)
-- estimatedTotalValue (string)
-- sourceSection (string)
+# For each offer:
+# - cardName (string)
+# - bank (string)
+# - cardType (string)
+# - rewardValue (string)
+# - rewardDescription (string)
+# - minimumSpendToUnlock (number)
+# - spendWithinDays (number)
+# - promoExpiryDate (string)
+# - annualFee (string)
+# - isExclusiveDeal (boolean)
+# - exclusivePromoCode (string)
+# - extraGift (string)
+# - estimatedTotalValue (string)
+# - sourceSection (string)
 
-Rules:
-- Include all cards mentioned
-- Use best available tier
-- If a field is missing, use null
-- Return raw JSON array only
-""".strip(),
-        "urls": [
-            "https://blog.moneysmart.sg/credit-cards/best-credit-card-promotions-singapore/",
-        ],
-    },
-    {
-        "category_name": "SINGSAVER",
-        "goal": """
-You are scraping SingSaver Singapore credit card listing page.
+# Rules:
+# - Include all cards mentioned
+# - Use best available tier
+# - If a field is missing, use null
+# - Return raw JSON array only
+# """.strip(),
+#         "urls": [
+#             "https://blog.moneysmart.sg/credit-cards/best-credit-card-promotions-singapore/",
+#         ],
+#     },
+#     {
+#         "category_name": "SINGSAVER",
+#         "goal": """
+# You are scraping SingSaver Singapore credit card listing page.
 
-Steps:
-1. Wait for full page load
-2. Close popups
-3. Extract ALL listed offers
+# Steps:
+# 1. Wait for full page load
+# 2. Close popups
+# 3. Extract ALL listed offers
 
-For each offer:
-- cardName (string)
-- bank (string)
-- cardType (string)
-- rewardValue (string)
-- rewardDescription (string)
-- minimumSpendToUnlock (number)
-- spendWithinDays (number)
-- promoExpiryDate (string)
-- annualFee (string)
-- isExclusiveDeal (boolean)
-- exclusivePromoCode (string)
-- extraGift (string)
-- estimatedTotalValue (string)
-- applyUrl (string)
+# For each offer:
+# - cardName (string)
+# - bank (string)
+# - cardType (string)
+# - rewardValue (string)
+# - rewardDescription (string)
+# - minimumSpendToUnlock (number)
+# - spendWithinDays (number)
+# - promoExpiryDate (string)
+# - annualFee (string)
+# - isExclusiveDeal (boolean)
+# - exclusivePromoCode (string)
+# - extraGift (string)
+# - estimatedTotalValue (string)
+# - applyUrl (string)
 
-Rules:
-- Prioritise exclusive deals
-- Include ALL cards
-- If a field is missing, use null
-- Return raw JSON array only
-""".strip(),
-        "urls": [
-            "https://www.singsaver.com.sg/credit-card/best",
-        ],
-    },
+# Rules:
+# - Prioritise exclusive deals
+# - Include ALL cards
+# - If a field is missing, use null
+# - Return raw JSON array only
+# """.strip(),
+#         "urls": [
+#             "https://www.singsaver.com.sg/credit-card/best",
+#         ],
+#     },
 ]
 
 # ==========================================

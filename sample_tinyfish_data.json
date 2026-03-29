@@ -169,6 +169,929 @@
         "steps": []
       }
     },
+        {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www1.citibank.com.sg/credit-cards",
+      "run_id": "0774e1f6-8113-41c0-aa72-b506f2f13e37",
+      "submit_response": {
+        "run_id": "0774e1f6-8113-41c0-aa72-b506f2f13e37",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "0774e1f6-8113-41c0-aa72-b506f2f13e37",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www1.citibank.com.sg/credit-cards to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-29T00:22:51Z",
+        "started_at": "2026-03-29T00:23:01Z",
+        "finished_at": "2026-03-29T00:33:17Z",
+        "num_of_steps": 26,
+        "result": {
+          "cards": [
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Prestige Card",
+              "cardType": "Rewards",
+              "annualFee": "S$651.82 (inclusive of 9% GST)",
+              "payoutCycle": null,
+              "signupBonus": "Up to 162,500 ThankYou points",
+              "cashbackRates": {
+                "local": null,
+                "foreign": null
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 120000,
+              "specialConditions": "Unlimited 4th night free stay, airport lounge access, relationship bonus up to 30%",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi PremierMiles Card",
+              "cardType": "Miles",
+              "annualFee": "S$196.20 (inclusive of 9% GST)",
+              "payoutCycle": null,
+              "signupBonus": "Up to 30,000 bonus Citi Miles",
+              "cashbackRates": {
+                "local": null,
+                "foreign": null
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Miles never expire, 2 complimentary airport lounge visits per year",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Cash Back+ Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (first year waived)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "Up to S$320 cash back (8% cash back offer)",
+              "cashbackRates": {
+                "all": 1.6,
+                "citi_plus_bonus": 0.4
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "0.4% bonus for Citi Plus customers on first S$2,000 spend",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Rewards Card",
+              "cardType": "Rewards",
+              "annualFee": "S$196.20 (first year waived)",
+              "payoutCycle": null,
+              "signupBonus": "40,000 bonus Citi ThankYou Points",
+              "cashbackRates": {
+                "online": null,
+                "others": null,
+                "shopping": null
+              },
+              "monthlyCapSGD": 1000,
+              "incomeRequirement": 30000,
+              "specialConditions": "10X Points for online and in-store shopping",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Cash Back Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (first year waived)",
+              "payoutCycle": "Monthly",
+              "signupBonus": "S$300 cash back",
+              "cashbackRates": {
+                "dining": 6,
+                "others": 0.25,
+                "petrol": 8,
+                "groceries": 6,
+                "private_commute": 8
+              },
+              "monthlyCapSGD": 80,
+              "incomeRequirement": 30000,
+              "specialConditions": "Up to 23.64% fuel savings at Caltex, Esso and Shell",
+              "minimumMonthlySpend": 800
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi SMRT Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (first 2 years waived)",
+              "payoutCycle": null,
+              "signupBonus": "S$300 cash back",
+              "cashbackRates": {
+                "online": 5,
+                "others": 0.3,
+                "groceries": 5,
+                "transport": 5
+              },
+              "monthlyCapSGD": 50,
+              "incomeRequirement": 30000,
+              "specialConditions": "5% savings on Malaysian Ringgit spend",
+              "minimumMonthlySpend": 500
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi M1 Card",
+              "cardType": "Cashback",
+              "annualFee": "S$196.20 (first year waived)",
+              "payoutCycle": null,
+              "signupBonus": "S$300 cash back",
+              "cashbackRates": {
+                "others": 0.3,
+                "m1_bill": 2.7,
+                "m1_shop": 2.7,
+                "entertainment": 4.7
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 30000,
+              "specialConditions": "Rebates credited as M1 Rebate to offset M1 bills",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Clear Card",
+              "cardType": "Rewards",
+              "annualFee": "S$30.52 (first year waived)",
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": {
+                "all": null
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": 0,
+              "specialConditions": "Exclusive for tertiary students from selected institutions",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Corporate Card",
+              "cardType": null,
+              "annualFee": "S$163.50",
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Commercial card for corporate travel and entertainment expenses",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Business Card",
+              "cardType": "Rewards",
+              "annualFee": "S$163.50 (first year waived)",
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Business card earning 1 ThankYou point for every S$1 spent",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Citibank",
+              "cardName": "Citi Purchasing Card",
+              "cardType": null,
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Commercial card for procurement and B2B payments",
+              "minimumMonthlySpend": null
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-52-53-227-204.tetra-data.production.tinyfish.io/tf-5a3b335b-4245-4421-92e0-612665eb2369/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": [
+          {
+            "id": "15ff756e-3e0a-40a8-a7cc-a31a2d82c3e5",
+            "timestamp": "2026-03-29T00:23:05Z",
+            "status": "RUNNING",
+            "action": "Visit Citibank Singapore credit cards page.",
+            "screenshot": null,
+            "duration": "3.4s"
+          },
+          {
+            "id": "7a09c998-a6a1-4170-be30-9592a125da33",
+            "timestamp": "2026-03-29T00:23:12Z",
+            "status": "RUNNING",
+            "action": "Wait for the page to load completely.",
+            "screenshot": null,
+            "duration": "2.3s"
+          },
+          {
+            "id": "bb8f8fb9-79b0-42c4-8249-50ecf92613c0",
+            "timestamp": "2026-03-29T00:23:15Z",
+            "status": "RUNNING",
+            "action": "Check why the page is empty.",
+            "screenshot": null,
+            "duration": "2.1s"
+          },
+          {
+            "id": "b91b3812-1777-49d3-a3d7-011874841b10",
+            "timestamp": "2026-03-29T00:23:20Z",
+            "status": "RUNNING",
+            "action": "Wait for the page to finish loading.",
+            "screenshot": null,
+            "duration": "5.1s"
+          },
+          {
+            "id": "1526ad30-e501-418e-a4a9-a1ebb639e2e8",
+            "timestamp": "2026-03-29T00:23:28Z",
+            "status": "RUNNING",
+            "action": "Final attempt to wait for the page to load content.",
+            "screenshot": null,
+            "duration": "10.1s"
+          },
+          {
+            "id": "ba445744-f285-48a1-b056-c9240e7dfd9e",
+            "timestamp": "2026-03-29T00:23:40Z",
+            "status": "RUNNING",
+            "action": "Bypass soft block for Citibank SG.",
+            "screenshot": null,
+            "duration": "4.2s"
+          },
+          {
+            "id": "bc79a184-8428-44ab-8ca9-945c39021765",
+            "timestamp": "2026-03-29T00:23:48Z",
+            "status": "RUNNING",
+            "action": "Visit Citibank Singapore credit cards page again after reconfiguration.",
+            "screenshot": null,
+            "duration": "23.8s"
+          },
+          {
+            "id": "8ac27b7b-da80-4f86-9a63-bda7ce949aca",
+            "timestamp": "2026-03-29T00:24:16Z",
+            "status": "RUNNING",
+            "action": "Close the cookie banner to clear the view.",
+            "screenshot": null,
+            "duration": "1.5s"
+          },
+          {
+            "id": "78d4839b-2289-44c2-ae96-e9a251370503",
+            "timestamp": "2026-03-29T00:24:19Z",
+            "status": "RUNNING",
+            "action": "Scroll to the bottom of the page to reveal all cards.",
+            "screenshot": null,
+            "duration": "1.3s"
+          },
+          {
+            "id": "edc5980f-4d9a-48c3-88ad-241fb246cd86",
+            "timestamp": "2026-03-29T00:24:26Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Prestige Card.",
+            "screenshot": null,
+            "duration": "32.6s"
+          },
+          {
+            "id": "09a31bc5-e410-4f86-86fd-890006cd1b4b",
+            "timestamp": "2026-03-29T00:25:02Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Prestige Card.",
+            "screenshot": null,
+            "duration": "4.9s"
+          },
+          {
+            "id": "99de3d85-4b0f-4024-b4ee-84a691a6b418",
+            "timestamp": "2026-03-29T00:25:12Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi PremierMiles Card.",
+            "screenshot": null,
+            "duration": "55.2s"
+          },
+          {
+            "id": "919b89bc-357c-4aac-bbc7-7f0497f588da",
+            "timestamp": "2026-03-29T00:26:09Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi PremierMiles Card.",
+            "screenshot": null,
+            "duration": "3.6s"
+          },
+          {
+            "id": "77a3ecef-dcb2-4966-9064-9f0f1e3f90f9",
+            "timestamp": "2026-03-29T00:26:18Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Cash Back+ Card.",
+            "screenshot": null,
+            "duration": "49.5s"
+          },
+          {
+            "id": "c3fe98d2-b440-40eb-888f-5255924d5ae8",
+            "timestamp": "2026-03-29T00:27:12Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Cash Back+ Card.",
+            "screenshot": null,
+            "duration": "3.4s"
+          },
+          {
+            "id": "ff40bb8b-1859-4837-ae14-12789ab3c272",
+            "timestamp": "2026-03-29T00:27:19Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Rewards Card.",
+            "screenshot": null,
+            "duration": "41.0s"
+          },
+          {
+            "id": "8d8b0616-9ce8-4fd2-91d0-53eb076a4ba7",
+            "timestamp": "2026-03-29T00:28:04Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Rewards Card.",
+            "screenshot": null,
+            "duration": "3.5s"
+          },
+          {
+            "id": "1ecde234-b303-440a-8083-6bc7a6fd9645",
+            "timestamp": "2026-03-29T00:28:10Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Cash Back Card.",
+            "screenshot": null,
+            "duration": "28.1s"
+          },
+          {
+            "id": "e9bc4b1b-9a56-47c9-848e-049a6d139be9",
+            "timestamp": "2026-03-29T00:28:42Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Cash Back Card.",
+            "screenshot": null,
+            "duration": "3.7s"
+          },
+          {
+            "id": "ab4a14ea-f837-40e8-ae3f-815e0104f03c",
+            "timestamp": "2026-03-29T00:28:51Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi SMRT Card.",
+            "screenshot": null,
+            "duration": "31.9s"
+          },
+          {
+            "id": "22ffb9f6-129f-4c25-9d84-83badc413896",
+            "timestamp": "2026-03-29T00:29:27Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi SMRT Card.",
+            "screenshot": null,
+            "duration": "6.8s"
+          },
+          {
+            "id": "c14869c6-70eb-4cad-ab4f-b8ca569f1b66",
+            "timestamp": "2026-03-29T00:29:37Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi M1 Card.",
+            "screenshot": null,
+            "duration": "23.7s"
+          },
+          {
+            "id": "66a7337a-2170-40b8-b70d-cb3ff5255c97",
+            "timestamp": "2026-03-29T00:30:04Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Clear Card.",
+            "screenshot": null,
+            "duration": "31.1s"
+          },
+          {
+            "id": "bc368d14-4b19-4c1d-87d7-697f36254d7e",
+            "timestamp": "2026-03-29T00:30:38Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Clear Card.",
+            "screenshot": null,
+            "duration": "3.9s"
+          },
+          {
+            "id": "e93c1daf-1326-47af-b038-cb3c48d992d2",
+            "timestamp": "2026-03-29T00:30:46Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Corporate Card.",
+            "screenshot": null,
+            "duration": "60.9s"
+          },
+          {
+            "id": "1ec5c164-64c7-4367-9902-a684053470a9",
+            "timestamp": "2026-03-29T00:31:50Z",
+            "status": "RUNNING",
+            "action": "Extract details for Citi Business Card.",
+            "screenshot": null,
+            "duration": "55.5s"
+          },
+          {
+            "id": "2d860018-85c7-4833-88ef-bd49fdb13dda",
+            "timestamp": "2026-03-29T00:33:16Z",
+            "status": "COMPLETED",
+            "action": "Task completed",
+            "screenshot": null,
+            "duration": null
+          }
+        ]
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.sc.com/sg/credit-cards/?intcid=web_listing-sc_com_quick_tools-homepg1-staticmedia_others-sng-homepage_new-cc-acquisition-sc_com_organic-sg-en",
+      "run_id": "7e067893-81bd-4f63-844f-9b6289cc92d0",
+      "submit_response": {
+        "run_id": "7e067893-81bd-4f63-844f-9b6289cc92d0",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "7e067893-81bd-4f63-844f-9b6289cc92d0",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.sc.com/sg/credit-cards/?intcid=web_listing-sc_com_quick_tools-homepg1-staticmedia_others-sng-homepage_new-cc-acquisition-sc_com_organic-sg-en to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-29T00:22:54Z",
+        "started_at": "2026-03-29T00:23:08Z",
+        "finished_at": "2026-03-29T00:25:15Z",
+        "num_of_steps": 11,
+        "result": {
+          "result": [
+            {
+              "bank": "Standard Chartered",
+              "cardName": "SC Visa Infinite",
+              "cardType": "Miles",
+              "annualFee": "S$550 (excl GST)",
+              "payoutCycle": null,
+              "signupBonus": "Up to 50,000 Welcome Miles with a min. spend of S$2,000 within 60 days of card approval",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Min $2,000 spend to earn 1.4 miles (local) or 3 miles (overseas) per S$1",
+              "minimumMonthlySpend": 2000
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "SC Simply Cash",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "payoutCycle": "Monthly",
+              "signupBonus": "Welcome bonus worth S$710 for new cardholders: Get a Samsonite MODUS Spinner 25” luggage and S$100 cashback",
+              "cashbackRates": {
+                "all": 1.5,
+                "caltex": 27.91
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Unlimited cashback with no min spends",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "SC Journey",
+              "cardType": "Miles",
+              "annualFee": "S$180 (excl GST)",
+              "payoutCycle": null,
+              "signupBonus": "Up to 30,000 Welcome Miles with a min. spend of S$800 within 60 days of card approval",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "3 miles per S$1 on rides, food deliveries and groceries; 2 miles per S$1 on all overseas spend with no cap",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "SC Smart",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "payoutCycle": "Monthly",
+              "signupBonus": "Welcome bonus worth S$710 for new cardholders: Get a Samsonite MODUS Spinner 25” luggage and S$100 cashback",
+              "cashbackRates": {
+                "dining": 10,
+                "commute": 10,
+                "streaming": 10
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "No cap on the cashback you can earn",
+              "minimumMonthlySpend": 0
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "SC Beyond",
+              "cardType": "Miles",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": "Limited-time: Grow your wealth with us and earn beyond 1 million Welcome Miles",
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Up to 8 miles per S$1 on overseas dining",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Rewards+ Credit Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Get up to 10x Rewards Points for every $1 charged",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Prudential Platinum Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Pay for your insurance premiums with the Rewards Points you earn",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Platinum Visa / Mastercard® Credit Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Earn 1 Rewards Point for every $1 charged",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Prudential Visa Signature Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Pay for your insurance premiums with the Rewards Points you earn",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "NUS Alumni Platinum Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Earn Rewards Points on your spend and contribute to your alma mater",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Business Platinum Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Earn Rewards Points and enjoy special hotel offers",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Priority Banking Visa Infinite Credit Card",
+              "cardType": "Rewards",
+              "annualFee": null,
+              "payoutCycle": null,
+              "signupBonus": null,
+              "cashbackRates": null,
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Earn 2.5 Rewards Points for every $1 charged",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "MANHATTAN Platinum/ World Mastercard®",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "payoutCycle": "Annual",
+              "signupBonus": null,
+              "cashbackRates": {
+                "all": 3
+              },
+              "monthlyCapSGD": 66.67,
+              "incomeRequirement": null,
+              "specialConditions": "Earn up to $800 cashback a year",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "MANHATTAN $500 Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "all": 0.25
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "Designed for students and young working adults",
+              "minimumMonthlySpend": null
+            },
+            {
+              "bank": "Standard Chartered",
+              "cardName": "Spree Credit Card",
+              "cardType": "Cashback",
+              "annualFee": null,
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "online": 3,
+                "others": 1,
+                "contactless": 2
+              },
+              "monthlyCapSGD": 30,
+              "incomeRequirement": null,
+              "specialConditions": "No minimum spend required",
+              "minimumMonthlySpend": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-54-215-33-38.tetra-data.production.tinyfish.io/tf-6f94446b-c55a-4e9c-9a62-b8a0143186d6/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": [
+          {
+            "id": "a5637e64-d683-4d4d-9a41-f32e4f4c0f4a",
+            "timestamp": "2026-03-29T00:23:12Z",
+            "status": "RUNNING",
+            "action": "Navigate to Standard Chartered SG credit cards page.",
+            "screenshot": null,
+            "duration": "8.3s"
+          },
+          {
+            "id": "44c28948-3a09-4437-995f-5546b829be8b",
+            "timestamp": "2026-03-29T00:23:26Z",
+            "status": "RUNNING",
+            "action": "Close the cookie banner to clear the view.",
+            "screenshot": null,
+            "duration": "4.0s"
+          },
+          {
+            "id": "a81107a2-4e1a-43e8-a0d3-7b0ad1e2efe9",
+            "timestamp": "2026-03-29T00:23:32Z",
+            "status": "RUNNING",
+            "action": "Scroll down to reveal more cards.",
+            "screenshot": null,
+            "duration": "4.1s"
+          },
+          {
+            "id": "c05691d9-ac0a-4b93-89a2-f51b38bee068",
+            "timestamp": "2026-03-29T00:23:42Z",
+            "status": "RUNNING",
+            "action": "Extract credit card details from the listing page.",
+            "screenshot": null,
+            "duration": "9.4s"
+          },
+          {
+            "id": "faf6eebc-cb9a-4bfa-be39-62f02c1cf496",
+            "timestamp": "2026-03-29T00:23:57Z",
+            "status": "RUNNING",
+            "action": "Extract annual fees and income requirements for all credit cards.",
+            "screenshot": null,
+            "duration": "2.6s"
+          },
+          {
+            "id": "015d9133-33d4-4b24-9d83-8ff55054cc58",
+            "timestamp": "2026-03-29T00:24:03Z",
+            "status": "RUNNING",
+            "action": "Identify the card for this compare button.",
+            "screenshot": null,
+            "duration": "0.7s"
+          },
+          {
+            "id": "8a6f0522-6526-4823-8523-71474185ac08",
+            "timestamp": "2026-03-29T00:24:08Z",
+            "status": "RUNNING",
+            "action": "Add a card to compare to see if it reveals more data.",
+            "screenshot": null,
+            "duration": "3.7s"
+          },
+          {
+            "id": "0fdcd4ff-54a2-4c71-89bf-ac8c9d9cf58a",
+            "timestamp": "2026-03-29T00:24:17Z",
+            "status": "RUNNING",
+            "action": "Find income requirements and annual fees for all cards.",
+            "screenshot": null,
+            "duration": "7.8s"
+          },
+          {
+            "id": "fdaaae49-4e3b-4b1f-821f-6c4d4f685b1c",
+            "timestamp": "2026-03-29T00:24:29Z",
+            "status": "RUNNING",
+            "action": "Scroll to the bottom to find footer information.",
+            "screenshot": null,
+            "duration": "1.4s"
+          },
+          {
+            "id": "22bbc6b5-012a-42ab-80ed-ff5aad68990d",
+            "timestamp": "2026-03-29T00:24:34Z",
+            "status": "RUNNING",
+            "action": "Get more details for Simply Cash card.",
+            "screenshot": null,
+            "duration": "4.4s"
+          },
+          {
+            "id": "91de255b-de6e-48ae-8a05-af2dbb0ebedb",
+            "timestamp": "2026-03-29T00:24:48Z",
+            "status": "RUNNING",
+            "action": "Search for specific keywords in the page content.",
+            "screenshot": null,
+            "duration": "5.9s"
+          },
+          {
+            "id": "d88818c5-013b-4303-9606-8f25b6550437",
+            "timestamp": "2026-03-29T00:25:14Z",
+            "status": "COMPLETED",
+            "action": "Task completed",
+            "screenshot": null,
+            "duration": null
+          }
+        ]
+      }
+    },
+    {
+      "category_name": "BANK_CASHBACK",
+      "url": "https://www.maribank.sg/product/mari-credit-card",
+      "run_id": "6606a8f5-ff9a-4338-87f4-751335f19fa2",
+      "submit_response": {
+        "run_id": "6606a8f5-ff9a-4338-87f4-751335f19fa2",
+        "error": null
+      },
+      "final_run_data": {
+        "run_id": "6606a8f5-ff9a-4338-87f4-751335f19fa2",
+        "status": "COMPLETED",
+        "goal": "Navigate to https://www.maribank.sg/product/mari-credit-card to complete the goal: You are scraping a Singapore bank's credit card listing or product page.\n\nContext:\n- Region: Singapore\n- Goal: Extract credit card features and cashback/rewards structure\n\nSteps:\n1. Wait for full page load.\n2. Close any cookie or popup.\n3. Scroll to reveal all cards.\n4. Extract ALL cards shown.\n\nFor each card, return:\n- cardName (string)\n- bank (string)\n- cardType (string): \"Cashback\", \"Miles\", \"Rewards\", \"Petrol\", \"Shopping\"\n- cashbackRates (object): category -> percentage\n- minimumMonthlySpend (number)\n- monthlyCapSGD (number)\n- payoutCycle (string): \"Monthly\", \"Quarterly\", \"Annual\"\n- annualFee (string)\n- incomeRequirement (number)\n- specialConditions (string)\n- signupBonus (string)\n\nRules:\n- Include ALL cards\n- Use highest cashback tier if multiple exist\n- If a field is missing, use null\n- cashbackRates keys must be lowercase\n- Return raw JSON array only",
+        "created_at": "2026-03-29T00:22:58Z",
+        "started_at": "2026-03-29T00:26:19Z",
+        "finished_at": "2026-03-29T00:28:59Z",
+        "num_of_steps": 14,
+        "result": {
+          "result": [
+            {
+              "bank": "MariBank",
+              "cardName": "Mari Credit Card",
+              "cardType": "Cashback",
+              "annualFee": "0",
+              "payoutCycle": "Monthly",
+              "signupBonus": null,
+              "cashbackRates": {
+                "local": 1.5,
+                "shopee": 1.5,
+                "overseas": 1.5
+              },
+              "monthlyCapSGD": null,
+              "incomeRequirement": null,
+              "specialConditions": "1.5% Shopee Coins on Shopee spend. 1.5% cashback on overseas spend is capped at S$1,500 spend per month.",
+              "minimumMonthlySpend": 0
+            }
+          ]
+        },
+        "error": null,
+        "streaming_url": "https://ip-52-53-227-204.tetra-data.production.tinyfish.io/tf-609a0fdb-7730-4512-a6d4-a3e35785bc62/stream/0",
+        "browser_config": {
+          "proxy_enabled": false,
+          "proxy_country_code": null
+        },
+        "steps": [
+          {
+            "id": "39bdb4af-1c68-4af5-b599-76bb2ffbc228",
+            "timestamp": "2026-03-29T00:26:23Z",
+            "status": "RUNNING",
+            "action": "Visit the Mari Credit Card product page to start scraping.",
+            "screenshot": null,
+            "duration": "3.3s"
+          },
+          {
+            "id": "e948a6f6-f0f7-493d-af50-0a3830a7c194",
+            "timestamp": "2026-03-29T00:26:28Z",
+            "status": "RUNNING",
+            "action": "Extract card features and details from the current page content.",
+            "screenshot": null,
+            "duration": "5.4s"
+          },
+          {
+            "id": "5e9e6d78-3556-4da5-bba7-366686fda7d4",
+            "timestamp": "2026-03-29T00:26:38Z",
+            "status": "RUNNING",
+            "action": "Check eligibility and income requirements.",
+            "screenshot": null,
+            "duration": "2.7s"
+          },
+          {
+            "id": "96a788e8-71c7-4b2f-a7b7-144bb7f47c04",
+            "timestamp": "2026-03-29T00:26:46Z",
+            "status": "RUNNING",
+            "action": "Extract eligibility and income requirements from the 'Who Can Apply' section.",
+            "screenshot": null,
+            "duration": "6.3s"
+          },
+          {
+            "id": "ca386129-ef6a-413b-99c0-eee0101d6ca0",
+            "timestamp": "2026-03-29T00:26:53Z",
+            "status": "RUNNING",
+            "action": "Check payout cycle and cashback details.",
+            "screenshot": null,
+            "duration": "1.9s"
+          },
+          {
+            "id": "b3a68eea-3128-4bf7-9cc3-9df5876eab44",
+            "timestamp": "2026-03-29T00:27:01Z",
+            "status": "RUNNING",
+            "action": "Find annual fee and other charges.",
+            "screenshot": null,
+            "duration": "2.2s"
+          },
+          {
+            "id": "00b401c3-f100-4c81-a03b-26a852be05d9",
+            "timestamp": "2026-03-29T00:27:07Z",
+            "status": "RUNNING",
+            "action": "Check for signup bonuses.",
+            "screenshot": null,
+            "duration": "2.3s"
+          },
+          {
+            "id": "e8d3cc63-3865-4e5b-bbc2-055650475a8e",
+            "timestamp": "2026-03-29T00:27:12Z",
+            "status": "RUNNING",
+            "action": "Extract signup bonuses and promotion details.",
+            "screenshot": null,
+            "duration": "3.2s"
+          },
+          {
+            "id": "6f62da7f-df8e-4292-916b-9713cf8b2f1a",
+            "timestamp": "2026-03-29T00:27:20Z",
+            "status": "RUNNING",
+            "action": "Check income requirements and other fees.",
+            "screenshot": null,
+            "duration": "6.0s"
+          },
+          {
+            "id": "9bf56a01-5baa-4e2f-9352-ab44df954b80",
+            "timestamp": "2026-03-29T00:27:29Z",
+            "status": "RUNNING",
+            "action": "Extract income requirement and other details from the 'Fees and Rates' page.",
+            "screenshot": null,
+            "duration": "3.7s"
+          },
+          {
+            "id": "e7cd56f4-a928-441f-97d0-b4a71520c927",
+            "timestamp": "2026-03-29T00:27:38Z",
+            "status": "RUNNING",
+            "action": "Check cashback T&Cs for payout cycle and caps.",
+            "screenshot": null,
+            "duration": "6.4s"
+          },
+          {
+            "id": "e1a7381f-248c-4c00-8e2f-3ccd06a46920",
+            "timestamp": "2026-03-29T00:27:47Z",
+            "status": "RUNNING",
+            "action": "Return to the product page to find payout timing.",
+            "screenshot": null,
+            "duration": "2.7s"
+          },
+          {
+            "id": "e3f6bd5f-8f02-4ee0-a601-3d9ca5006c1b",
+            "timestamp": "2026-03-29T00:27:55Z",
+            "status": "RUNNING",
+            "action": "Check cashback payout cycle and any caps.",
+            "screenshot": null,
+            "duration": "19.9s"
+          },
+          {
+            "id": "99958a2e-9178-4f2c-80ca-238ed37a6c3e",
+            "timestamp": "2026-03-29T00:28:20Z",
+            "status": "RUNNING",
+            "action": "Check for caps on Shopee Coins.",
+            "screenshot": null,
+            "duration": "29.1s"
+          },
+          {
+            "id": "b5b78a46-e44c-43eb-80ad-ff2dff2d9456",
+            "timestamp": "2026-03-29T00:28:58Z",
+            "status": "COMPLETED",
+            "action": "Task completed",
+            "screenshot": null,
+            "duration": null
+          }
+        ]
+      }
+    },
     {
       "category_name": "BANK_CASHBACK",
       "url": "https://www.americanexpress.com/en-sg/credit-cards/",

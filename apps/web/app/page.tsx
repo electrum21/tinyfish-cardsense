@@ -178,9 +178,6 @@ export default async function DashboardPage() {
             Top Cashback Card
           </div>
           <h2 className="text-2xl font-semibold">{formatSpotlight(summary.spotlight.topCashbackCard)}</h2>
-          <p className="mt-3 text-sm text-white/60">
-            Browse cards by bank, card type, annual fee, income requirement, and reward profile.
-          </p>
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
@@ -188,28 +185,19 @@ export default async function DashboardPage() {
             Top Signup Promo
           </div>
           <h2 className="text-2xl font-semibold">{formatSpotlight(summary.spotlight.topSignupOffer)}</h2>
-          <p className="mt-3 text-sm text-white/60">
-            Track reward values, minimum spend rules, exclusivity, and promotional details.
-          </p>
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
           <div className="mb-3 inline-flex rounded-full bg-cyan-400/15 px-3 py-1 text-xs font-semibold text-cyan-200">
-            Merchant Boost
+            Top Merchant Offer
           </div>
           <h2 className="text-2xl font-semibold">{formatSpotlight(summary.spotlight.topMerchantOffer)}</h2>
-          <p className="mt-3 text-sm text-white/60">
-            Compare live merchant cashback opportunities and identify strong stacking ideas.
-          </p>
         </div>
       </section>
 
       <section className="mt-10">
         <div className="mb-5">
-          <h2 className="text-3xl font-bold">Explore the platform</h2>
-          <p className="mt-2 text-white/60">
-            Preview the data here, then jump into the full page for all records and details.
-          </p>
+          <h2 className="text-3xl font-bold">Our Intelligence</h2>
         </div>
 
         <div className="grid gap-6 xl:grid-cols-3">
@@ -223,7 +211,7 @@ export default async function DashboardPage() {
 
           <PreviewCard
             title="Signup Offers"
-            description="See current signup campaigns and compare reward mechanics."
+            description="See current signup campaigns and compare rewards."
             href="/signup-offers"
           >
             <MiniSignupTable offers={collections.signupOffers} />
@@ -231,7 +219,7 @@ export default async function DashboardPage() {
 
           <PreviewCard
             title="Merchant Offers"
-            description="View merchant cashback opportunities and category trends."
+            description="View merchant cashback and category trends."
             href="/merchant-offers"
           >
             <MiniMerchantTable offers={collections.merchantOffers} />

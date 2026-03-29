@@ -139,7 +139,7 @@ function emptySummary(): SummaryPayload {
 export async function getSummary(): Promise<SummaryPayload> {
   try {
     const response = await fetch(`${env.apiBaseUrl}/api/summary`, {
-      next: { revalidate: 300 }
+      next: { revalidate: 60 }
     });
 
     if (!response.ok) {

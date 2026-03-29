@@ -3,9 +3,36 @@
 import { useMemo, useState } from "react";
 import type { SignupOffer } from "@/lib/data";
 
-type Props = {
-  offers: SignupOffer[];
+type Option = {
+  value: string;
+  label: string;
 };
+
+type Props = {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  options: Option[];
+};
+
+export function SelectField({ label, value, onChange, options }: Props) {
+  return (
+    <div className="xl:col-span-2"> {/* 🔥 THIS IS KEY */}
+      <label className="mb-2 block text-sm text-white/60">{label}</label>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full min-w-[160px] rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none focus:border-cyan-400"
+      >
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value} className="bg-slate-900">
+            {opt.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
 
 type ExclusiveFilter = "all" | "exclusive" | "non_exclusive";
 type SignupSortKey = "bank" | "card_name" | "reward_value" | "expiry";
@@ -98,7 +125,7 @@ export function SignupOffersBrowser({ offers }: Props) {
     <div className="space-y-6">
       <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-12">
-          <div className="xl:col-span-4">
+          <div className="xl:col-span-5">
             <label className="mb-2 block text-sm text-white/60">Search</label>
             <input
               value={search}

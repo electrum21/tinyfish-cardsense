@@ -51,8 +51,8 @@ export function MerchantOffersBrowser({ offers }: Props) {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          <div className="xl:col-span-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-12">
+          <div className="xl:col-span-7">
             <label className="mb-2 block text-sm text-white/60">Search</label>
             <input
               value={search}
@@ -62,26 +62,30 @@ export function MerchantOffersBrowser({ offers }: Props) {
             />
           </div>
 
-          <SelectField
-            label="Category"
-            value={category}
-            onChange={setCategory}
-            options={[
-              { value: "all", label: "All categories" },
-              ...categories.map((value) => ({ value, label: value }))
-            ]}
-          />
+          <div className="xl:col-span-3">
+            <SelectField
+              label="Category"
+              value={category}
+              onChange={setCategory}
+              options={[
+                { value: "all", label: "All categories" },
+                ...categories.map((value) => ({ value, label: value }))
+              ]}
+            />
+          </div>
 
-          <SelectField
-            label="Sort by"
-            value={sortBy}
-            onChange={(value) => setSortBy(value as MerchantSortKey)}
-            options={[
-              { value: "highest_cashback", label: "Highest cashback" },
-              { value: "merchant", label: "Merchant" },
-              { value: "category", label: "Category" }
-            ]}
-          />
+          <div className="xl:col-span-2">
+            <SelectField
+              label="Sort by"
+              value={sortBy}
+              onChange={(value) => setSortBy(value as MerchantSortKey)}
+              options={[
+                { value: "highest_cashback", label: "Highest cashback" },
+                { value: "merchant", label: "Merchant" },
+                { value: "category", label: "Category" }
+              ]}
+            />
+          </div>
         </div>
 
         <div className="mt-4 text-sm text-white/55">
@@ -140,7 +144,7 @@ function SelectField({
   options: { value: string; label: string }[];
 }) {
   return (
-    <div>
+    <div className="w-full">
       <label className="mb-2 block text-sm text-white/60">{label}</label>
 
       <div className="relative">
